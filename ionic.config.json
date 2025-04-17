@@ -1,0 +1,7 @@
+{
+  "name": "VilaVerdeIonic",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
