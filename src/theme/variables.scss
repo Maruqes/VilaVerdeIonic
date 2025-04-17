@@ -1,2 +1,23 @@
 // For information on how to create your own theme, please see:
 // http://ionicframework.com/docs/theming/
+
+:root {
+    /** primary **/
+    --ion-color-primary: #2e7d32; // Main green color
+    --ion-color-primary-rgb: 46, 125, 50;
+    --ion-color-primary-contrast: #ffffff;
+    --ion-color-primary-contrast-rgb: 255, 255, 255;
+    --ion-color-primary-shade: #286e2c; // Slightly darker shade
+    --ion-color-primary-tint: #428a46; // Slightly lighter tint
+
+    // You can optionally define other colors (secondary, tertiary, etc.) here
+    // or keep the Ionic defaults.
+
+    // Example for secondary (optional)
+    // --ion-color-secondary: #66bb6a; // Lighter green
+    // --ion-color-secondary-rgb: 102,187,106;
+    // --ion-color-secondary-contrast: #000000;
+    // --ion-color-secondary-contrast-rgb: 0,0,0;
+    // --ion-color-secondary-shade: #5aa55e;
+    // --ion-color-secondary-tint: #75c279;
+}

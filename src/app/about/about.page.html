@@ -1,0 +1,75 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary"> <!-- Use primary color for consistency -->
+    <ion-title>Descobre Vila Verde</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="about-page ion-padding">
+  <!-- Removed condense header for a cleaner look -->
+
+  <div class="intro-section ion-text-center">
+    <img src="assets/vila_verde.gif" alt="Vila Verde Animação" class="header-gif" />
+    <h2>Bem-vindo a Vila Verde!</h2>
+    <p>
+      Conhecida como o coração do Minho, Vila Verde é uma terra onde a natureza exuberante se encontra com tradições
+      seculares. Explore connosco os encantos desta região única.
+    </p>
+  </div>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-md="6">
+        <ion-card class="info-card green-shadow">
+          <img alt="Paço de Giela" src="assets/palacio.png" /> <!-- Using existing asset -->
+          <ion-card-header>
+            <ion-card-title>História e Património</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            Vila Verde, terra minhota de raízes profundas, guarda vestígios desde a Pré-História, como as mamoas do
+            Monte do Borrelho. A Citânia de São Julião e a Torre de Penegate testemunham séculos de história e
+            resistência. Hoje, o concelho preserva tradições como os lenços dos namorados e celebrações religiosas que
+            mantêm viva a identidade local.
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="12" size-md="6">
+        <ion-card class="info-card green-shadow">
+          <!-- Suggestion: Add an image representing local crafts/culture -->
+          <img alt="Artesanato local - Lenços de Namorados" src="assets/lenço.jpg" />
+          <!-- Placeholder, replace with relevant image -->
+          <ion-card-header>
+            <ion-card-title>Cultura e Tradição</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            Vila Verde é berço dos emblemáticos Lenços dos Namorados, bordados com mensagens de amor, símbolo da alma
+            minhota. A cultura popular vibra em romarias, folclore e artesanato que passam de geração em geração.
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <ion-card class="info-card green-shadow">
+          <!-- Suggestion: Add an image representing nature -->
+          <img alt="Paisagem Natural de Vila Verde" src="assets/vila-verde.jpg" />
+          <!-- Placeholder, replace with relevant image -->
+          <ion-card-header>
+            <ion-card-title>Natureza e Lazer</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            Com paisagens verdejantes, rios como o Homem e trilhos na Serra do Gerês por perto, Vila Verde convida a
+            caminhadas, piqueniques e desportos ao ar livre. É um refúgio natural onde a tranquilidade reina.
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <div class="contact-section ion-text-center">
+    <h3>Visite-nos!</h3>
+    <p>Planeie a sua visita e descubra porque Vila Verde é Namorar Portugal.</p>
+    <!-- Add contact info or links if needed -->
+  </div>
+
+</ion-content>
+<app-footer-tabs></app-footer-tabs>

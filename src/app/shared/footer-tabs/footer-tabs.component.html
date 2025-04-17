@@ -1,0 +1,25 @@
+<ion-footer>
+  <ion-tab-bar slot="bottom" class="footer-tab">
+    <ion-tab-button tab="main" [routerLink]="['/main']" [class.tab-selected]="isTabActive('/main')">
+      <ion-icon name="home" [color]="isTabActive('/main') ? 'primary' : ''"></ion-icon>
+      <ion-label [color]="isTabActive('/main') ? 'primary' : ''">Início</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="food" [routerLink]="['/food']" [class.tab-selected]="isTabActive('/food')">
+      <ion-icon name="restaurant" [color]="isTabActive('/food') ? 'primary' : ''"></ion-icon>
+      <ion-label [color]="isTabActive('/food') ? 'primary' : ''">Comida</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="about" [routerLink]="['/about']" [class.tab-selected]="isTabActive('/about')">
+      <!-- Added routerLink -->
+      <ion-icon name="compass" [color]="isTabActive('/about') ? 'primary' : ''"></ion-icon>
+      <ion-label [color]="isTabActive('/about') ? 'primary' : ''">Sobre</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="bebidas" [routerLink]="['/bebidas']" [class.tab-selected]="isTabActive('/bebidas')">
+      <!-- Updated link -->
+      <ion-icon name="wine" [color]="isTabActive('/bebidas') ? 'primary' : ''"></ion-icon>
+      <ion-label [color]="isTabActive('/bebidas') ? 'primary' : ''">Bebidas</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-footer>

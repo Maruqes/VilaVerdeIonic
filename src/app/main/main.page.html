@@ -27,7 +27,7 @@
     </ion-card-content>
   </ion-card>
 
-  <ion-label class="popular-title">Populares perto de ti</ion-label>
+  <ion-label class="popular-title">Populares em Vila Verde</ion-label>
 
   <!-- Carrossel horizontal de locais populares -->
   <div class="popular-scroll">
@@ -40,7 +40,7 @@
     </ion-card>
 
     <ion-card class="popular-card">
-      <img src="assets/palacio.png" />
+      <img src="assets/tasquinha.jpg" />
       <ion-card-header>
         <ion-card-title>Tasquinha do&nbsp;Cerqueira</ion-card-title>
         <p>Restaurante</p>
@@ -48,7 +48,7 @@
     </ion-card>
 
     <ion-card class="popular-card">
-      <img src="assets/palacio.png" />
+      <img src="assets/barbilla.png" />
       <ion-card-header>
         <ion-card-title>Billa</ion-card-title>
         <p>Bar</p>
@@ -56,7 +56,7 @@
     </ion-card>
 
     <ion-card class="popular-card">
-      <img src="assets/palacio.png" />
+      <img src="assets/amoure.png" />
       <ion-card-header>
         <ion-card-title>Amoure</ion-card-title>
         <p>Hotel</p>
@@ -66,27 +66,5 @@
 
 </ion-content>
 
-<!-- Tab bar fixa no fundo -->
-<ion-footer>
-  <ion-tab-bar slot="bottom" class="footer-tab">
-    <ion-tab-button tab="home">
-      <ion-icon name="home"></ion-icon>
-      <ion-label>Início</ion-label>
-    </ion-tab-button>
-
-    <ion-tab-button tab="food">
-      <ion-icon name="restaurant"></ion-icon>
-      <ion-label>Comida</ion-label>
-    </ion-tab-button>
-
-    <ion-tab-button tab="about">
-      <ion-icon name="compass"></ion-icon>
-      <ion-label>Sobre</ion-label>
-    </ion-tab-button>
-
-    <ion-tab-button tab="drinks">
-      <ion-icon name="wine"></ion-icon>
-      <ion-label>Bebidas</ion-label>
-    </ion-tab-button>
-  </ion-tab-bar>
-</ion-footer>
+<!-- Use the shared footer component -->
+<app-footer-tabs></app-footer-tabs>

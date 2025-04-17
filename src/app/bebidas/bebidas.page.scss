@@ -1,0 +1,77 @@
+:host {
+    --main-green-light: #66bb6a;
+    --main-green: #2e7d32;
+    --main-green-dark: #1b5e20;
+    --card-bg: rgba(255, 255, 255, 0.92);
+    --text-dark: #1c1c1e;
+    --color-selected-green: #a5d6a7;
+}
+
+// Apply green gradient background
+.bebidas-page {
+    // Changed class
+    --background: linear-gradient(135deg, var(--main-green-light) 0%, var(--main-green) 100%);
+}
+
+// Update header to use green
+.header-transparent {
+    ion-toolbar {
+        --background: var(--main-green);
+        --ion-color-base: var(--main-green);
+        border: none;
+    }
+
+    ion-title,
+    ion-icon,
+    ion-buttons ion-icon {
+        color: #fff !important;
+    }
+}
+
+// Styles adapted for bebidas cards
+.bebidas-card {
+    // Changed class
+    margin: 0 0 1rem 0;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    background: var(--card-bg);
+    color: var(--text-dark);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 120px;
+}
+
+.bebidas-card img {
+    // Changed class
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.bebidas-card ion-card-header {
+    // Changed class
+    text-align: left;
+    padding: 0.5rem 1rem;
+    flex-grow: 1;
+}
+
+.bebidas-card ion-card-title {
+    // Changed class
+    font-size: 1rem;
+    color: var(--main-green-dark);
+    margin: 0 0 0.25rem 0;
+    font-weight: 600;
+}
+
+.bebidas-card p {
+    // Changed class
+    font-size: 0.85rem;
+    color: var(--text-dark);
+    margin: 0;
+}
+
+// Footer styles remain the same as they are likely shared or defined globally/in shared component
+// .footer-tab { ... }

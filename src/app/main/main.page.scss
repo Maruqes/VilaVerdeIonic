@@ -1,30 +1,31 @@
 :host {
-    --main-blue: #1a73e8;
-    --main-blue-dark: #155db9;
+    --main-green-light: #66bb6a; // Lighter green for gradient start
+    --main-green: #2e7d32; // Main green color
+    --main-green-dark: #1b5e20; // Darker green
     --card-bg: rgba(255, 255, 255, 0.92);
     --text-dark: #1c1c1e;
+    --color-selected-green: #a5d6a7; // Light green for selected tab
 }
 
-/********* Layout base *********/
+// Apply green gradient background
 .main-page {
-    --background: linear-gradient(135deg, #6ec1e4 0%, var(--main-blue) 100%);
+    --background: linear-gradient(135deg, var(--main-green-light) 0%, var(--main-green) 100%);
 }
 
+// Update header to use green
 .header-transparent {
     ion-toolbar {
-        --background: var(--main-blue); // Changed from transparent to main blue
-        --ion-color-base: var(--main-blue); // Match base color
+        --background: var(--main-green); // Use main green
+        --ion-color-base: var(--main-green); // Match base color
         border: none;
     }
 
-    /* força título, ícones e botões a branco */
     ion-title,
     ion-icon,
     ion-buttons ion-icon {
         color: #fff !important;
     }
 }
-
 
 /* Efeito vidro partilhado */
 .glass-card {
@@ -83,6 +84,11 @@
 
 ion-progress-bar {
     margin-bottom: 1rem;
+    --progress-background: var(--main-green-light); // Lighter green for the track
+    --buffer-background: rgba(165, 214, 167, 0.5); // Even lighter green for buffer
+    --background: var(--main-green-dark); // Darker green for the bar itself
+    height: 8px; // Optional: Adjust height if needed
+    border-radius: 4px; // Optional: Round corners
 }
 
 
@@ -90,7 +96,7 @@ ion-progress-bar {
     --background: #fff;
     --background-hover: #ffd65c;
     --background-focused: #ffd65c;
-    --color: var(--main-blue);
+    --color: var(--main-green); // Use main green for text
     font-weight: 600;
 }
 
@@ -142,7 +148,7 @@ ion-progress-bar {
 
 .popular-card ion-card-title {
     font-size: 0.9rem;
-    color: var(--main-blue-dark);
+    color: var(--main-green-dark); // Use dark green
     margin: 0;
 }
 
@@ -152,21 +158,27 @@ ion-progress-bar {
     margin: 0;
 }
 
-/********* Footer *********/
+// Footer styles copied from main.page.scss
 .footer-tab {
-    --background: rgba(255, 255, 255, 0.15);
+    --background: rgba(255, 255, 255, 0.15); // Keep glass effect
     backdrop-filter: blur(10px);
-    --color: #fff;
-    --color-selected: #ffd65c;
+    --color: #fff; // Keep text white
+    --color-selected: var(--color-selected-green); // Use light green for selected tab
     font-size: 0.75rem;
     border: none;
+
+    // Style for the selected tab button
+    ion-tab-button.tab-selected {
+        --color: var(--color-selected);
+    }
 }
 
 ion-searchbar {
     /* vidro ligeiro, sem tonalidade azul */
     --background: rgba(255, 255, 255, 0.12);
     --box-shadow: none;
-    --border-width: 0;          /* tira a linha azul do modo MD */
+    --border-width: 0;
+    /* tira a linha azul do modo MD */
     --border-radius: 12px;
 
     /* texto, placeholder e ícones a branco */

@@ -1,0 +1,90 @@
+// filepath: /home/marques/projects/VilaVerdeIonic/src/app/food/food.page.scss
+// Import variables if needed, or define directly
+// @import '../../theme/variables.scss';
+
+// Define green color variables consistent with main.page.scss
+:host {
+    --main-green-light: #66bb6a; // Lighter green for gradient start
+    --main-green: #2e7d32; // Main green color
+    --main-green-dark: #1b5e20; // Darker green
+    --card-bg: rgba(255, 255, 255, 0.92);
+    --text-dark: #1c1c1e;
+    --color-selected-green: #a5d6a7; // Light green for selected tab
+}
+
+// Apply green gradient background
+.food-page {
+    --background: linear-gradient(135deg, var(--main-green-light) 0%, var(--main-green) 100%);
+}
+
+// Update header to use green
+.header-transparent {
+    ion-toolbar {
+        --background: var(--main-green); // Use main green
+        --ion-color-base: var(--main-green); // Match base color
+        border: none;
+    }
+
+    ion-title,
+    ion-icon,
+    ion-buttons ion-icon {
+        color: #fff !important;
+    }
+}
+
+// Styles adapted from .popular-card in main.page.scss
+.food-card {
+    // width: 100%; // Take full width
+    // height: auto; // Adjust height automatically
+    margin: 0 0 1rem 0; // Margin bottom for spacing
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    background: var(--card-bg);
+    color: var(--text-dark);
+    display: flex; // Use flexbox for layout
+    flex-direction: row; // Arrange image and text side-by-side
+    align-items: center; // Center items vertically
+    height: 120px; // Fixed height for consistency
+}
+
+.food-card img {
+    width: 120px; // Fixed width for the image
+    height: 120px; // Match card height
+    object-fit: cover;
+    flex-shrink: 0; // Prevent image from shrinking
+}
+
+.food-card ion-card-header {
+    text-align: left; // Align text to the left
+    padding: 0.5rem 1rem; // Adjust padding
+    flex-grow: 1; // Allow header to take remaining space
+}
+
+.food-card ion-card-title {
+    font-size: 1rem; // Slightly larger title
+    color: var(--main-green-dark); // Use dark green
+    margin: 0 0 0.25rem 0; // Add margin below title
+    font-weight: 600;
+}
+
+.food-card p {
+    font-size: 0.85rem;
+    color: var(--text-dark);
+    margin: 0;
+}
+
+// Footer styles copied from main.page.scss
+.footer-tab {
+    --background: rgba(255, 255, 255, 0.15); // Keep glass effect
+    backdrop-filter: blur(10px);
+    --color: #fff; // Keep text white
+    --color-selected: var(--color-selected-green); // Use light green for selected tab
+    font-size: 0.75rem;
+    border: none;
+
+    // Style for the selected tab button
+    ion-tab-button.tab-selected {
+        --color: var(--color-selected);
+    }
+}
