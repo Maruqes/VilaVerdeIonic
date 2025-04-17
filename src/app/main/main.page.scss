@@ -1,0 +1,182 @@
+:host {
+    --main-blue: #1a73e8;
+    --main-blue-dark: #155db9;
+    --card-bg: rgba(255, 255, 255, 0.92);
+    --text-dark: #1c1c1e;
+}
+
+/********* Layout base *********/
+.main-page {
+    --background: linear-gradient(135deg, #6ec1e4 0%, var(--main-blue) 100%);
+}
+
+.header-transparent {
+    ion-toolbar {
+        --background: var(--main-blue); // Changed from transparent to main blue
+        --ion-color-base: var(--main-blue); // Match base color
+        border: none;
+    }
+
+    /* força título, ícones e botões a branco */
+    ion-title,
+    ion-icon,
+    ion-buttons ion-icon {
+        color: #fff !important;
+    }
+}
+
+
+/* Efeito vidro partilhado */
+.glass-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.viagem-card {
+    color: #fff;
+    padding: 1rem;
+    border-radius: 1.2rem;
+    margin: 1rem 0 2rem 0;
+}
+
+.viagem-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.viagem-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+    text-align: center;
+}
+
+
+.chegada-card {
+    color: #fff;
+    padding: 0.5rem;
+    border-radius: 1.2rem;
+    margin: 1rem 0 2rem 0;
+    text-align: center;
+}
+
+.tempo-restante {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    margin-bottom: 1rem;
+}
+
+.contador {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+    margin: 0;
+}
+
+ion-progress-bar {
+    margin-bottom: 1rem;
+}
+
+
+.cta-btn {
+    --background: #fff;
+    --background-hover: #ffd65c;
+    --background-focused: #ffd65c;
+    --color: var(--main-blue);
+    font-weight: 600;
+}
+
+.popular-title {
+    margin: 1rem 0 0.5rem 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+.popular-scroll {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+    scroll-snap-type: x mandatory;
+}
+
+.popular-scroll::-webkit-scrollbar {
+    height: 6px;
+}
+
+.popular-scroll::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
+}
+
+.popular-card {
+    flex: 0 0 160px;
+    height: 240px;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    scroll-snap-align: start;
+    background: var(--card-bg);
+    color: var(--text-dark);
+}
+
+.popular-card img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+.popular-card ion-card-header {
+    text-align: center;
+    padding-top: 0.5rem;
+}
+
+.popular-card ion-card-title {
+    font-size: 0.9rem;
+    color: var(--main-blue-dark);
+    margin: 0;
+}
+
+.popular-card p {
+    font-size: 0.8rem;
+    color: var(--text-dark);
+    margin: 0;
+}
+
+/********* Footer *********/
+.footer-tab {
+    --background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    --color: #fff;
+    --color-selected: #ffd65c;
+    font-size: 0.75rem;
+    border: none;
+}
+
+ion-searchbar {
+    /* vidro ligeiro, sem tonalidade azul */
+    --background: rgba(255, 255, 255, 0.12);
+    --box-shadow: none;
+    --border-width: 0;          /* tira a linha azul do modo MD */
+    --border-radius: 12px;
+
+    /* texto, placeholder e ícones a branco */
+    --color: #fff;
+    --placeholder-color: rgba(255, 255, 255, 0.8);
+    --icon-color: #fff;
+    --clear-button-color: #fff;
+
+    /* garante que não puxa a cor primária azul do tema */
+    .searchbar-input {
+        background: transparent !important;
+    }
+}
