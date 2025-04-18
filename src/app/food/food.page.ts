@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService, Item } from '../services/data.service'; // Import DataService and Item
+import { Observable } from 'rxjs'; // Import Observable
 
 @Component({
   selector: 'app-food',
@@ -8,9 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FoodPage implements OnInit {
 
-  constructor() { }
+  restaurants$!: Observable<Item[]>; // Use Observable for async data
+
+  constructor(private dataService: DataService) { }
 
   ngOnInit() {
+    this.restaurants$ = this.dataService.getRestaurants(); // Fetch restaurants
   }
 
 }

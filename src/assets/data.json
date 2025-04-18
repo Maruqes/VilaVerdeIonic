@@ -1,0 +1,108 @@
+{
+    "restaurants": [
+        {
+            "name": "Restaurante Palácio",
+            "image": "assets/palacio.png",
+            "description": "Cozinha tradicional portuguesa."
+        },
+        {
+            "name": "Tasquinha do Cerqueira",
+            "image": "assets/tasquinha.jpg",
+            "description": "Cozinha tradicional portuguesa."
+        },
+        {
+            "name": "Camada",
+            "image": "assets/camada.png",
+            "description": "Cervejaria especializada em francesinhas."
+        },
+        {
+            "name": "Basilio",
+            "image": "assets/basilio.png",
+            "description": "Pregaria artesanal."
+        },
+        {
+            "name": "Campo de Tiro",
+            "image": "assets/campodetiro.png",
+            "description": "Cozinha tradicional portuguesa."
+        },
+        {
+            "name": "Damabrigo",
+            "image": "assets/damabrigo.png",
+            "description": "Hamburgueria artesanal."
+        },
+        {
+            "name": "Letra",
+            "image": "assets/letra.png",
+            "description": "Cerveja artesanal minhota."
+        },
+        {
+            "name": "Mamacita",
+            "image": "assets/mamacita.png",
+            "description": "Cervejaria com francesinhas, hambúrgueres e pregos."
+        },
+        {
+            "name": "Churrasqueira Central",
+            "image": "assets/central.png",
+            "description": "Churrasqueira especializada em churrasco."
+        },
+        {
+            "name": "Terminal de Coimbra",
+            "image": "assets/terminal.png",
+            "description": "Hamburgueria."
+        },
+        {
+            "name": "Restaurante Joao",
+            "image": "assets/joao.png",
+            "description": "Cozinha tradicional portuguesa."
+        },
+        {
+            "name": "Heel's",
+            "image": "assets/heels.png",
+            "description": "Steakhouse."
+        },
+        {
+            "name": "Churrasqueira Barros",
+            "image": "assets/barros.png",
+            "description": "Churrasqueira especializada em churrasco."
+        }
+    ],
+    "bars": [
+        {
+            "name": "Billa",
+            "image": "assets/barbilla.png",
+            "description": "Cocktails e outras bebidas."
+        },
+        {
+            "name": "Cuscas",
+            "image": "assets/cuscas.jpg",
+            "description": "Bar de cocktails e bebidas variadas."
+        },
+        {
+            "name": "Tuna",
+            "image": "assets/tuna.png",
+            "description": "Cocktails e bebidas para todos os gostos."
+        }
+    ],
+    "popular": [
+        {
+            "name": "Lenços dos Namorados",
+            "image": "assets/lenço.jpg",
+            "description": "Tradição e artesanato local."
+        },
+        {
+            "name": "Campo de Tiro",
+            "image": "assets/campodetiro.png",
+            "description": "Atividade desportiva e lazer."
+        },
+        {
+            "name": "Billa",
+            "image": "assets/barbilla.png",
+            "description": "Álcool e diversão."
+        },
+        {
+            "name": "Amoure",
+            "image": "assets/amoure.png",
+            "description": "Espaço cultural e eventos."
+        }
+    ]
+}

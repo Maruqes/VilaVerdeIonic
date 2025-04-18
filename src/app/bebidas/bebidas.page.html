@@ -6,27 +6,12 @@
 
 <ion-content [fullscreen]="true" class="bebidas-page ion-padding"> <!-- Changed class -->
     <!-- List of Drink/Bar Cards -->
-    <ion-card class="bebidas-card"> <!-- Changed class -->
-        <img src="assets/barbilla.png" alt="Bar Image" /> <!-- Placeholder -->
+    <!-- Use *ngFor with async pipe to loop through bar items -->
+    <ion-card class="bebidas-card" *ngFor="let item of bars$ | async"> <!-- Changed class -->
+        <img [src]="item.image" [alt]="item.name" /> <!-- Placeholder -->
         <ion-card-header>
-            <ion-card-title>Billa</ion-card-title> <!-- Example Content -->
-            <p>Cocktails & Bebidas</p> <!-- Example Content -->
-        </ion-card-header>
-    </ion-card>
-
-    <ion-card class="bebidas-card"> <!-- Changed class -->
-        <img src="assets/cuscas.jpg" alt="Bar Image" /> <!-- Placeholder -->
-        <ion-card-header>
-            <ion-card-title>Cuscas</ion-card-title> <!-- Example Content -->
-            <p>Cocktails & Bebidas</p> <!-- Example Content -->
-        </ion-card-header>
-    </ion-card>
-
-    <ion-card class="bebidas-card"> <!-- Changed class -->
-        <img src="assets/tuna.png" alt="Bar Image" /> <!-- Placeholder -->
-        <ion-card-header>
-            <ion-card-title>Tuna</ion-card-title> <!-- Example Content -->
-            <p>Cocktails & Bebidas</p> <!-- Example Content -->
+            <ion-card-title>{{ item.name }}</ion-card-title> <!-- Example Content -->
+            <p>{{ item.description }}</p> <!-- Example Content -->
         </ion-card-header>
     </ion-card>
 

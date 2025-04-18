@@ -31,35 +31,12 @@
 
   <!-- Carrossel horizontal de locais populares -->
   <div class="popular-scroll">
-    <ion-card class="popular-card">
-      <img src="assets/palacio.png" />
+    <!-- Use *ngFor with async pipe to loop through popular items -->
+    <ion-card class="popular-card" *ngFor="let item of popularItems$ | async">
+      <img [src]="item.image" [alt]="item.name" />
       <ion-card-header>
-        <ion-card-title>Palácio</ion-card-title>
-        <p>Restaurante</p>
-      </ion-card-header>
-    </ion-card>
-
-    <ion-card class="popular-card">
-      <img src="assets/tasquinha.jpg" />
-      <ion-card-header>
-        <ion-card-title>Tasquinha do&nbsp;Cerqueira</ion-card-title>
-        <p>Restaurante</p>
-      </ion-card-header>
-    </ion-card>
-
-    <ion-card class="popular-card">
-      <img src="assets/barbilla.png" />
-      <ion-card-header>
-        <ion-card-title>Billa</ion-card-title>
-        <p>Bar</p>
-      </ion-card-header>
-    </ion-card>
-
-    <ion-card class="popular-card">
-      <img src="assets/amoure.png" />
-      <ion-card-header>
-        <ion-card-title>Amoure</ion-card-title>
-        <p>Hotel</p>
+        <ion-card-title>{{ item.name }}</ion-card-title>
+        <p>{{ item.description }}</p>
       </ion-card-header>
     </ion-card>
   </div>
