@@ -31,7 +31,8 @@ const customAnimation = (_: HTMLElement, opts: any): Animation => {
   imports: [
     BrowserModule,
     IonicModule.forRoot({
-      navAnimation: customAnimation
+      navAnimation: customAnimation,
+      backButtonText: 'Voltar' // Adiciona esta linha
     }),
     AppRoutingModule,
     HttpClientModule

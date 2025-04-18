@@ -25,7 +25,11 @@ const routes: Routes = [
   },
   {
     path: 'about',
-    loadChildren: () => import('./about/about.module').then( m => m.AboutPageModule)
+    loadChildren: () => import('./about/about.module').then(m => m.AboutPageModule)
+  },
+  {
+    path: 'item-detail/:id', // Add :id parameter to the route
+    loadChildren: () => import('./item-detail/item-detail.module').then(m => m.ItemDetailPageModule)
   },
 ];
 

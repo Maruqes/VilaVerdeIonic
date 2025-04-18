@@ -1,108 +1,337 @@
 {
     "restaurants": [
         {
+            "id": 1,
             "name": "Restaurante Palácio",
-            "image": "assets/palacio.png",
-            "description": "Cozinha tradicional portuguesa."
+            "image": "assets/palacio/palacio.png",
+            "description": "Cozinha tradicional portuguesa.",
+            "extra": {
+                "fotos": [
+                    "assets/palacio/palacio1.webp",
+                    "assets/palacio/palacio2.webp",
+                    "assets/palacio/palacio3.webp",
+                    "assets/palacio/palacio4.webp",
+                    "assets/palacio/palacio5.webp",
+                    "assets/palacio/palacio6.webp"
+                ],
+                "descricao": "Cozinha tradicional portuguesa com pratos de conforto e receitas familiares."
+            }
         },
         {
+            "id": 2,
             "name": "Tasquinha do Cerqueira",
-            "image": "assets/tasquinha.jpg",
-            "description": "Cozinha tradicional portuguesa."
+            "image": "assets/tasquinha/tasquinha.jpg",
+            "description": "Cozinha tradicional portuguesa.",
+            "extra": {
+                "fotos": [
+                    "assets/tasquinha/tasquinha1.jpg",
+                    "assets/tasquinha/tasquinha2.jpg",
+                    "assets/tasquinha/tasquinha3.jpg",
+                    "assets/tasquinha/tasquinha4.jpg",
+                    "assets/tasquinha/tasquinha5.jpg",
+                    "assets/tasquinha/tasquinha6.jpg",
+                    "assets/tasquinha/tasquinha7.jpg",
+                    "assets/tasquinha/tasquinha8.jpg"
+                ],
+                "descricao": "Petiscos e pratos regionais servidos num ambiente acolhedor."
+            }
         },
         {
+            "id": 3,
             "name": "Camada",
-            "image": "assets/camada.png",
-            "description": "Cervejaria especializada em francesinhas."
+            "image": "assets/camada/camada.png",
+            "description": "Cervejaria especializada em francesinhas.",
+            "extra": {
+                "fotos": [
+                    "assets/camada/camada1.jpg",
+                    "assets/camada/camada2.jpg",
+                    "assets/camada/camada3.jpg",
+                    "assets/camada/camada4.jpg",
+                    "assets/camada/camada5.jpg",
+                    "assets/camada/camada6.jpg"
+                ],
+                "descricao": "Francesinhas generosas acompanhadas por cervejas artesanais."
+            }
         },
         {
+            "id": 4,
             "name": "Basilio",
             "image": "assets/basilio.png",
-            "description": "Pregaria artesanal."
+            "description": "Pregaria artesanal.",
+            "extra": {
+                "fotos": [],
+                "descricao": "Pregos no pão feitos na hora com ingredientes frescos."
+            }
         },
         {
+            "id": 5,
             "name": "Campo de Tiro",
-            "image": "assets/campodetiro.png",
-            "description": "Cozinha tradicional portuguesa."
+            "image": "assets/campo/campodetiro.png",
+            "description": "Cozinha tradicional portuguesa.",
+            "extra": {
+                "fotos": [
+                    "assets/campo/campo1.jpg",
+                    "assets/campo/campo2.jpg",
+                    "assets/campo/campo3.jpg"
+                ],
+                "descricao": "Espaço rústico com pratos típicos e ambiente descontraído."
+            }
         },
         {
+            "id": 6,
             "name": "Damabrigo",
-            "image": "assets/damabrigo.png",
-            "description": "Hamburgueria artesanal."
+            "image": "assets/dama/damabrigo.png",
+            "description": "Hamburgueria artesanal.",
+            "extra": {
+                "fotos": [
+                    "assets/dama/dama1.jpg",
+                    "assets/dama/dama2.jpg",
+                    "assets/dama/dama3.jpg",
+                    "assets/dama/dama4.jpg",
+                    "assets/dama/dama5.jpg",
+                    "assets/dama/dama6.jpg"
+                ],
+                "descricao": "Hambúrgueres criativos com produtos locais."
+            }
         },
         {
+            "id": 7,
             "name": "Letra",
-            "image": "assets/letra.png",
-            "description": "Cerveja artesanal minhota."
+            "image": "assets/letra/letra.png",
+            "description": "Cerveja artesanal minhota.",
+            "extra": {
+                "fotos": [
+                    "assets/letra/letra1.jpg",
+                    "assets/letra/letra2.jpg",
+                    "assets/letra/letra3.jpg",
+                    "assets/letra/letra4.jpg",
+                    "assets/letra/letra5.jpg"
+                ],
+                "descricao": "Taproom dedicado à cerveja artesanal produzida no Minho."
+            }
         },
         {
+            "id": 8,
             "name": "Mamacita",
-            "image": "assets/mamacita.png",
-            "description": "Cervejaria com francesinhas, hambúrgueres e pregos."
+            "image": "assets/mama/mamacita.png",
+            "description": "Cervejaria com francesinhas, hambúrgueres e pregos.",
+            "extra": {
+                "fotos": [
+                    "assets/mama/mama1.jpg",
+                    "assets/mama/mama2.jpg",
+                    "assets/mama/mama3.jpg",
+                    "assets/mama/mama4.jpg",
+                    "assets/mama/mama5.jpg",
+                    "assets/mama/mama6.jpg",
+                    "assets/mama/mama7.jpg",
+                    "assets/mama/mama8.jpg"
+                ],
+                "descricao": "Menu diversificado de comfort‑food e cervejas."
+            }
         },
         {
+            "id": 9,
             "name": "Churrasqueira Central",
-            "image": "assets/central.png",
-            "description": "Churrasqueira especializada em churrasco."
+            "image": "assets/central/central.png",
+            "description": "Churrasqueira especializada em churrasco.",
+            "extra": {
+                "fotos": [
+                    "assets/central/central1.jpg",
+                    "assets/central/central2.jpg",
+                    "assets/central/central3.jpg",
+                    "assets/central/central4.jpg"
+                ],
+                "descricao": "Frango e carnes na brasa, temperados à moda antiga."
+            }
         },
         {
+            "id": 10,
             "name": "Terminal de Coimbra",
-            "image": "assets/terminal.png",
-            "description": "Hamburgueria."
+            "image": "assets/terminal/terminal.png",
+            "description": "Hamburgueria.",
+            "extra": {
+                "fotos": [
+                    "assets/terminal/terminal1.webp",
+                    "assets/terminal/terminal2.webp",
+                    "assets/terminal/terminal3.webp",
+                    "assets/terminal/terminal4.webp",
+                    "assets/terminal/terminal5.webp",
+                    "assets/terminal/terminal6.webp",
+                    "assets/terminal/terminal7.webp",
+                    "assets/terminal/terminal8.webp",
+                    "assets/terminal/terminal9.webp",
+                    "assets/terminal/terminal10.webp",
+                    "assets/terminal/terminal11.webp",
+                    "assets/terminal/terminal12.webp",
+                    "assets/terminal/terminal13.webp",
+                    "assets/terminal/terminal14.webp"
+                ],
+                "descricao": "Hambúrgueres generosos servidos num espaço industrial chic."
+            }
         },
         {
+            "id": 11,
             "name": "Restaurante Joao",
             "image": "assets/joao.png",
-            "description": "Cozinha tradicional portuguesa."
+            "description": "Cozinha tradicional portuguesa.",
+            "extra": {
+                "fotos": [],
+                "descricao": "Receitas caseiras e serviço familiar."
+            }
         },
         {
+            "id": 12,
             "name": "Heel's",
-            "image": "assets/heels.png",
-            "description": "Steakhouse."
+            "image": "assets/hells/hells.png",
+            "description": "Steakhouse.",
+            "extra": {
+                "fotos": [
+                    "assets/hells/hells1.jpg",
+                    "assets/hells/hells2.jpg",
+                    "assets/hells/hells3.jpg",
+                    "assets/hells/hells4.jpg",
+                    "assets/hells/hells5.jpg",
+                    "assets/hells/hells6.jpg",
+                    "assets/hells/hells7.jpg",
+                    "assets/hells/hells8.jpg",
+                    "assets/hells/hells9.jpg"
+                ],
+                "descricao": "Cortes premium grelhados no ponto certo."
+            }
         },
         {
+            "id": 13,
             "name": "Churrasqueira Barros",
-            "image": "assets/barros.png",
-            "description": "Churrasqueira especializada em churrasco."
+            "image": "assets/barros/barros.png",
+            "description": "Churrasqueira especializada em churrasco.",
+            "extra": {
+                "fotos": [
+                    "assets/barros/barros1.jpg",
+                    "assets/barros/barros2.jpg",
+                    "assets/barros/barros3.jpg",
+                    "assets/barros/barros4.jpg",
+                    "assets/barros/barros5.jpg",
+                    "assets/barros/barros6.jpg"
+                ],
+                "descricao": "Carnes assadas na brasa com receitas tradicionais."
+            }
         }
     ],
     "bars": [
         {
+            "id": 101,
             "name": "Billa",
-            "image": "assets/barbilla.png",
-            "description": "Cocktails e outras bebidas."
+            "image": "assets/billa/barbilla.png",
+            "description": "Cocktails e outras bebidas.",
+            "extra": {
+                "fotos": [
+                    "assets/billa/billa1.jpg",
+                    "assets/billa/billa2.jpg",
+                    "assets/billa/billa3.jpg",
+                    "assets/billa/billa4.jpg",
+                    "assets/billa/billa5.jpg",
+                    "assets/billa/billa6.jpg"
+                ],
+                "descricao": "Cocktails de autor e ambiente descontraído."
+            }
         },
         {
+            "id": 102,
             "name": "Cuscas",
             "image": "assets/cuscas.jpg",
-            "description": "Bar de cocktails e bebidas variadas."
+            "description": "Bar de cocktails e bebidas variadas.",
+            "extra": {
+                "fotos": [],
+                "descricao": "Clássicos e criações próprias servidos com boa música."
+            }
         },
         {
+            "id": 103,
             "name": "Tuna",
-            "image": "assets/tuna.png",
-            "description": "Cocktails e bebidas para todos os gostos."
+            "image": "assets/tuna/tuna.png",
+            "description": "Cocktails e bebidas para todos os gostos.",
+            "extra": {
+                "fotos": [
+                    "assets/tuna/tuna1.jpg"
+                ],
+                "descricao": "Extensa carta de bebidas num espaço animado."
+            }
         }
     ],
     "popular": [
         {
+            "id": 201,
             "name": "Lenços dos Namorados",
-            "image": "assets/lenço.jpg",
-            "description": "Tradição e artesanato local."
+            "image": "assets/lenco/lenço.jpg",
+            "description": "Tradição e artesanato local.",
+            "extra": {
+                "fotos": [
+                    "assets/lenco/lenco1.jpg",
+                    "assets/lenco/lenço2.jpg",
+                    "assets/lenco/lenço3.webp",
+                    "assets/lenco/lenço4.webp",
+                    "assets/lenco/lenço5.jpg"
+                ],
+                "descricao": "Artesanato minhoto repleto de simbolismo e história."
+            }
         },
         {
+            "id": 5,
             "name": "Campo de Tiro",
-            "image": "assets/campodetiro.png",
-            "description": "Atividade desportiva e lazer."
+            "image": "assets/campo/campodetiro.png",
+            "description": "Cozinha tradicional portuguesa.",
+            "extra": {
+                "fotos": [
+                    "assets/campo/campo1.jpg",
+                    "assets/campo/campo2.jpg",
+                    "assets/campo/campo3.jpg"
+                ],
+                "descricao": "Espaço rústico com pratos típicos e ambiente descontraído."
+            }
         },
         {
+            "id": 101,
             "name": "Billa",
-            "image": "assets/barbilla.png",
-            "description": "Álcool e diversão."
+            "image": "assets/billa/barbilla.png",
+            "description": "Cocktails e outras bebidas.",
+            "extra": {
+                "fotos": [
+                    "assets/billa/billa1.jpg",
+                    "assets/billa/billa2.jpg",
+                    "assets/billa/billa3.jpg",
+                    "assets/billa/billa4.jpg",
+                    "assets/billa/billa5.jpg",
+                    "assets/billa/billa6.jpg"
+                ],
+                "descricao": "Cocktails de autor e ambiente descontraído."
+            }
         },
         {
+            "id": 202,
             "name": "Amoure",
-            "image": "assets/amoure.png",
-            "description": "Espaço cultural e eventos."
+            "image": "assets/moure/amoure.png",
+            "description": "Espaço cultural e eventos.",
+            "extra": {
+                "fotos": [
+                    "assets/moure/moure1.jpg",
+                    "assets/moure/moure2.jpg",
+                    "assets/moure/moure3.jpg",
+                    "assets/moure/moure4.jpg",
+                    "assets/moure/moure5.jpg",
+                    "assets/moure/moure6.jpg",
+                    "assets/moure/moure7.jpg",
+                    "assets/moure/moure8.jpg",
+                    "assets/moure/moure9.jpg",
+                    "assets/moure/moure10.jpg",
+                    "assets/moure/moure11.jpg",
+                    "assets/moure/moure12.jpg",
+                    "assets/moure/moure13.jpg",
+                    "assets/moure/moure14.jpg",
+                    "assets/moure/moure15.jpg",
+                    "assets/moure/moure16.jpg"
+                ],
+                "descricao": "Espaço cultural e eventos com uma programação diversificada."
+            }
         }
     ]
 }

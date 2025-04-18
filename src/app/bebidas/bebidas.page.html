@@ -7,7 +7,9 @@
 <ion-content [fullscreen]="true" class="bebidas-page ion-padding"> <!-- Changed class -->
     <!-- List of Drink/Bar Cards -->
     <!-- Use *ngFor with async pipe to loop through bar items -->
-    <ion-card class="bebidas-card" *ngFor="let item of bars$ | async"> <!-- Changed class -->
+    <!-- Add click event to navigate -->
+    <ion-card class="bebidas-card" *ngFor="let item of bars$ | async" (click)="goToItemDetail(item.id)">
+        <!-- Changed class and added click handler -->
         <img [src]="item.image" [alt]="item.name" /> <!-- Placeholder -->
         <ion-card-header>
             <ion-card-title>{{ item.name }}</ion-card-title> <!-- Example Content -->

@@ -4,26 +4,24 @@
   <img src="assets/vila_verde.gif" alt="Vila Verde Logo"
     style="display: block; margin: 0.5rem auto 0 auto; width: 65px;" />
 
-  <ion-searchbar placeholder="Insere a tua localização" mode="md" animated="true"
-    show-clear-button="focus"></ion-searchbar>
-
-  <!-- Cartão de contagem decrescente para a chegada -->
-  <ion-card class="chegada-card glass-card">
+  <!-- Cartão de Meteorologia -->
+  <ion-card class="weather-card glass-card" *ngIf="weatherData">
     <ion-card-header>
-      <ion-card-title>Tempo até Vila&nbsp;Verde</ion-card-title>
+      <ion-card-title>Meteorologia em Vila Verde</ion-card-title>
     </ion-card-header>
-    <ion-card-content>
-      <div class="tempo-restante">
-        <ion-icon size="large" name="time-outline"></ion-icon>
-        <!--
-          Substitui o valor estático pelo contador gerado em TS/JS.
-          O id="contador" fica aqui para referenciares facilmente.
-        -->
-        <h1 class="contador" id="contador">45&nbsp;min</h1>
+    <ion-card-content class="weather-content">
+      <div class="weather-info">
+        <img [src]="weatherIconUrl" alt="Weather icon" class="weather-icon" *ngIf="weatherIconUrl" />
+        <div class="weather-details">
+          <span class="temperature">{{ weatherData.main.temp | number:'1.0-0' }}°C</span>
+          <span class="description">{{ weatherData.weather[0].description | titlecase }}</span>
+        </div>
       </div>
-
-      <!-- Barra de progresso (valor entre 0 e 1). 0.25 ≃ 25% -->
-      <ion-progress-bar value="0.25"></ion-progress-bar>
+      <div class="extra-info">
+        <span>Sensação: {{ weatherData.main.feels_like | number:'1.0-0' }}°C</span>
+        <span>Humidade: {{ weatherData.main.humidity }}%</span>
+        <span *ngIf="weatherData.rain && weatherData.rain['1h']">Chuva (1h): {{ weatherData.rain['1h'] }} mm</span>
+      </div>
     </ion-card-content>
   </ion-card>
 
@@ -32,7 +30,8 @@
   <!-- Carrossel horizontal de locais populares -->
   <div class="popular-scroll">
     <!-- Use *ngFor with async pipe to loop through popular items -->
-    <ion-card class="popular-card" *ngFor="let item of popularItems$ | async">
+    <!-- Add click event to navigate -->
+    <ion-card class="popular-card" *ngFor="let item of popularItems$ | async" (click)="goToItemDetail(item.id)">
       <img [src]="item.image" [alt]="item.name" />
       <ion-card-header>
         <ion-card-title>{{ item.name }}</ion-card-title>

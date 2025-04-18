@@ -10,6 +10,14 @@
     --ion-color-primary-shade: #286e2c; // Slightly darker shade
     --ion-color-primary-tint: #428a46; // Slightly lighter tint
 
+    /** light **/
+    --ion-color-light: #fdfcf8; // Very light beige for backgrounds
+    --ion-color-light-rgb: 253, 252, 248;
+    --ion-color-light-contrast: #000000;
+    --ion-color-light-contrast-rgb: 0, 0, 0;
+    --ion-color-light-shade: #e0dfdb;
+    --ion-color-light-tint: #fefef9;
+
     // You can optionally define other colors (secondary, tertiary, etc.) here
     // or keep the Ionic defaults.
 
@@ -20,4 +28,21 @@
     // --ion-color-secondary-contrast-rgb: 0,0,0;
     // --ion-color-secondary-shade: #5aa55e;
     // --ion-color-secondary-tint: #75c279;
+
+    /** vilaverde **/
+    --ion-color-vilaverde: #2e7d32;
+    --ion-color-vilaverde-rgb: 46, 125, 50;
+    --ion-color-vilaverde-contrast: #ffffff;
+    --ion-color-vilaverde-contrast-rgb: 255, 255, 255;
+    --ion-color-vilaverde-shade: #286e2c;
+    --ion-color-vilaverde-tint: #438a47;
+}
+
+.ion-color-vilaverde {
+    --ion-color-base: var(--ion-color-vilaverde);
+    --ion-color-base-rgb: var(--ion-color-vilaverde-rgb);
+    --ion-color-contrast: var(--ion-color-vilaverde-contrast);
+    --ion-color-contrast-rgb: var(--ion-color-vilaverde-contrast-rgb);
+    --ion-color-shade: var(--ion-color-vilaverde-shade);
+    --ion-color-tint: var(--ion-color-vilaverde-tint);
 }

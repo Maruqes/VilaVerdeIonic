@@ -1,74 +1,65 @@
 :host {
-    --main-green-light: #66bb6a;
-    --main-green: #2e7d32;
-    --main-green-dark: #1b5e20;
-    --card-bg: rgba(255, 255, 255, 0.92);
+    // Removed old variables, rely on --ion-color-vilaverde from :root
     --text-dark: #1c1c1e;
-    --color-selected-green: #a5d6a7;
 }
 
 // Apply green gradient background
 .bebidas-page {
     // Changed class
-    --background: linear-gradient(135deg, var(--main-green-light) 0%, var(--main-green) 100%);
+    --background: linear-gradient(135deg, var(--ion-color-vilaverde-tint) 0%, var(--ion-color-vilaverde) 100%); // Use tint and base
 }
 
 // Update header to use green
 .header-transparent {
     ion-toolbar {
-        --background: var(--main-green);
-        --ion-color-base: var(--main-green);
+        --background: var(--ion-color-vilaverde); // Use base color
+        --ion-color-base: var(--ion-color-vilaverde); // Match base color
         border: none;
     }
 
     ion-title,
     ion-icon,
     ion-buttons ion-icon {
-        color: #fff !important;
+        color: var(--ion-color-vilaverde-contrast) !important; // Use contrast color
     }
 }
 
 // Styles adapted for bebidas cards
 .bebidas-card {
-    // Changed class
-    margin: 0 0 1rem 0;
+    margin: 0 0 1.5rem 0; // Increased bottom margin for spacing
     border-radius: 1rem;
     overflow: hidden;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
-    background: var(--card-bg);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18); // Slightly enhanced shadow
+    background: var(--ion-color-light); // Changed to use --ion-color-light
     color: var(--text-dark);
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    height: 120px;
+    flex-direction: column; // Arrange image and text vertically
+    // Removed fixed height
 }
 
 .bebidas-card img {
-    // Changed class
-    width: 120px;
-    height: 120px;
+    width: 100%; // Image takes full width
+    height: 180px; // Increased fixed height for the image
     object-fit: cover;
-    flex-shrink: 0;
+    // Removed flex-shrink
 }
 
 .bebidas-card ion-card-header {
-    // Changed class
     text-align: left;
-    padding: 0.5rem 1rem;
-    flex-grow: 1;
+    padding: 1rem; // Increased padding
+    width: 100%; // Ensure header takes full width
+    // Removed flex-grow
 }
 
 .bebidas-card ion-card-title {
-    // Changed class
-    font-size: 1rem;
-    color: var(--main-green-dark);
-    margin: 0 0 0.25rem 0;
+    font-size: 1.1rem; // Slightly larger title
+    color: var(--ion-color-vilaverde-shade); // Use shade color
+    margin: 0 0 0.35rem 0; // Adjusted margin
     font-weight: 600;
 }
 
 .bebidas-card p {
-    // Changed class
-    font-size: 0.85rem;
+    font-size: 0.9rem; // Slightly larger description text
     color: var(--text-dark);
     margin: 0;
 }

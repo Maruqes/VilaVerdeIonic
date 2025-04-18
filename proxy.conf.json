@@ -1,0 +1,11 @@
+{
+    "/vilaverde-api": {
+        "target": "https://vilaverde.marquesserver.freeddns.org:10513",
+        "secure": false,
+        "changeOrigin": true,
+        "pathRewrite": {
+            "^/vilaverde-api": ""
+        },
+        "logLevel": "debug"
+    }
+}

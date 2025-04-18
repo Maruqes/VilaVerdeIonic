@@ -2,89 +2,68 @@
 // Import variables if needed, or define directly
 // @import '../../theme/variables.scss';
 
-// Define green color variables consistent with main.page.scss
+// Define green color variables consistent with main.page.scss - REMOVED, rely on --ion-color-vilaverde from :root
 :host {
-    --main-green-light: #66bb6a; // Lighter green for gradient start
-    --main-green: #2e7d32; // Main green color
-    --main-green-dark: #1b5e20; // Darker green
-    --card-bg: rgba(255, 255, 255, 0.92);
     --text-dark: #1c1c1e;
-    --color-selected-green: #a5d6a7; // Light green for selected tab
+    --color-selected-green: var(--ion-color-vilaverde-tint); // Use tint for selected tab
 }
 
 // Apply green gradient background
 .food-page {
-    --background: linear-gradient(135deg, var(--main-green-light) 0%, var(--main-green) 100%);
+    --background: linear-gradient(135deg, var(--ion-color-vilaverde-tint) 0%, var(--ion-color-vilaverde) 100%); // Use tint and base
 }
 
 // Update header to use green
 .header-transparent {
     ion-toolbar {
-        --background: var(--main-green); // Use main green
-        --ion-color-base: var(--main-green); // Match base color
+        --background: var(--ion-color-vilaverde); // Use base color
+        --ion-color-base: var(--ion-color-vilaverde); // Match base color
         border: none;
     }
 
     ion-title,
     ion-icon,
     ion-buttons ion-icon {
-        color: #fff !important;
+        color: var(--ion-color-vilaverde-contrast) !important; // Use contrast color
     }
 }
 
 // Styles adapted from .popular-card in main.page.scss
 .food-card {
-    // width: 100%; // Take full width
-    // height: auto; // Adjust height automatically
-    margin: 0 0 1rem 0; // Margin bottom for spacing
+    margin: 0 0 1.5rem 0; // Increased bottom margin for spacing
     border-radius: 1rem;
     overflow: hidden;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
-    background: var(--card-bg);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18); // Slightly enhanced shadow
+    background: var(--ion-color-light); // Changed to use --ion-color-light
     color: var(--text-dark);
-    display: flex; // Use flexbox for layout
-    flex-direction: row; // Arrange image and text side-by-side
-    align-items: center; // Center items vertically
-    height: 120px; // Fixed height for consistency
+    display: flex;
+    flex-direction: column; // Arrange image and text vertically
+    // Removed fixed height to allow content to determine size
 }
 
 .food-card img {
-    width: 120px; // Fixed width for the image
-    height: 120px; // Match card height
+    width: 100%; // Image takes full width of the card
+    height: 180px; // Increased fixed height for the image
     object-fit: cover;
-    flex-shrink: 0; // Prevent image from shrinking
+    // Removed flex-shrink as it's not needed in column layout
 }
 
 .food-card ion-card-header {
-    text-align: left; // Align text to the left
-    padding: 0.5rem 1rem; // Adjust padding
-    flex-grow: 1; // Allow header to take remaining space
+    text-align: left;
+    padding: 1rem; // Increased padding
+    width: 100%; // Ensure header takes full width
+    // Removed flex-grow as it's not needed in column layout
 }
 
 .food-card ion-card-title {
-    font-size: 1rem; // Slightly larger title
-    color: var(--main-green-dark); // Use dark green
-    margin: 0 0 0.25rem 0; // Add margin below title
+    font-size: 1.1rem; // Slightly larger title
+    color: var(--ion-color-vilaverde-shade); // Use shade color
+    margin: 0 0 0.35rem 0; // Adjusted margin
     font-weight: 600;
 }
 
 .food-card p {
-    font-size: 0.85rem;
+    font-size: 0.9rem; // Slightly larger description text
     color: var(--text-dark);
     margin: 0;
-}
-
-// Footer styles copied from main.page.scss
-.footer-tab {
-    --background: rgba(255, 255, 255, 0.15); // Keep glass effect
-    backdrop-filter: blur(10px);
-    --color: #fff; // Keep text white
-    --color-selected: var(--color-selected-green); // Use light green for selected tab
-    font-size: 0.75rem;
-    border: none;
-
-    // Style for the selected tab button
-    ion-tab-button.tab-selected {
-        --color: var(--color-selected);
-    }
 }

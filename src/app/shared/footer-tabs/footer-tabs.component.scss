@@ -1,26 +1,31 @@
 ion-tab-bar {
-    --background: var(--ion-color-light);
+    --background: rgb(253, 252, 248); // Changed from --ion-color-light to RGB
     border-top: 1px solid var(--ion-color-medium-shade);
 }
 
 ion-tab-button {
-    --color: var(--ion-color-medium);
-    --color-selected: var(--ion-color-primary);
-
-    &.tab-selected {
-
-        ion-icon,
-        ion-label {
-            color: var(--ion-color-primary);
-            font-weight: bold;
-        }
-    }
+    --color: rgb(34, 36, 40); // Changed from medium to dark RGB for better contrast
+    --color-selected: var(--ion-color-vilaverde); // Use vilaverde color
 
     ion-icon {
         font-size: 1.5rem; // Adjust icon size
+        color: rgb(34, 36, 40) !important; // dark RGB
     }
 
     ion-label {
         font-size: 0.75rem; // Adjust label size
+        color: rgb(34, 36, 40) !important; // dark RGB
+    }
+
+    &.tab-selected {
+
+        ion-icon {
+            color: var(--ion-color-vilaverde) !important;
+        }
+
+        ion-label {
+            color: var(--ion-color-vilaverde) !important;
+            font-weight: bold;
+        }
     }
 }

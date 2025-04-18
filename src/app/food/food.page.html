@@ -14,7 +14,8 @@
 
   <!-- List of Food Cards -->
   <!-- Use *ngFor with async pipe to loop through restaurant items -->
-  <ion-card class="food-card" *ngFor="let item of restaurants$ | async">
+  <!-- Add click event to navigate -->
+  <ion-card class="food-card" *ngFor="let item of restaurants$ | async" (click)="goToItemDetail(item.id)">
     <img [src]="item.image" [alt]="item.name" />
     <ion-card-header>
       <ion-card-title>{{ item.name }}</ion-card-title>

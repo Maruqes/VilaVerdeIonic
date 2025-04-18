@@ -1,5 +1,5 @@
 .home-page {
-  --background: linear-gradient(to top, #66bb6a, #2e7d32);
+  --background: linear-gradient(to top, var(--ion-color-vilaverde-tint), var(--ion-color-vilaverde)); // Use tint and base
 }
 
 ion-header,
@@ -46,6 +46,6 @@ ion-footer {
 .explore-button {
   margin: 0 20px 10px;
   font-weight: bold;
-  --background: #2e7d32;
-  --color: #fff;
+  --background: var(--ion-color-vilaverde); // Use base color
+  --color: var(--ion-color-vilaverde-contrast); // Use contrast color
 }

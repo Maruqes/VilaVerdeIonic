@@ -1,45 +1,47 @@
 :host {
-    --main-green-light: #66bb6a; // Lighter green for gradient start
-    --main-green: #2e7d32; // Main green color
-    --main-green-dark: #1b5e20; // Darker green
-    --card-bg: rgba(255, 255, 255, 0.92);
+    // Removed old variables, rely on --ion-color-vilaverde from :root
     --text-dark: #1c1c1e;
-    --color-selected-green: #a5d6a7; // Light green for selected tab
+    --color-selected-green: var(--ion-color-vilaverde-tint); // Use tint for selected tab
 }
 
 // Apply green gradient background
 .main-page {
-    --background: linear-gradient(135deg, var(--main-green-light) 0%, var(--main-green) 100%);
+    --background: linear-gradient(135deg, var(--ion-color-vilaverde-tint) 0%, var(--ion-color-vilaverde) 100%); // Use tint and base
 }
 
 // Update header to use green
 .header-transparent {
     ion-toolbar {
-        --background: var(--main-green); // Use main green
-        --ion-color-base: var(--main-green); // Match base color
+        --background: var(--ion-color-vilaverde); // Use base color
+        --ion-color-base: var(--ion-color-vilaverde); // Match base color
         border: none;
     }
 
     ion-title,
     ion-icon,
     ion-buttons ion-icon {
-        color: #fff !important;
+        color: var(--ion-color-vilaverde-contrast) !important; // Use contrast color
     }
 }
 
 /* Efeito vidro partilhado */
 .glass-card {
-    background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(16px) saturate(180%);
     -webkit-backdrop-filter: blur(16px) saturate(180%);
     border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .viagem-card {
-    color: #fff;
+    background: var(--ion-color-light); // Changed background
+    color: var(--text-dark); // Adjust text color for light background
     padding: 1rem;
     border-radius: 1.2rem;
     margin: 1rem 0 2rem 0;
+
+    // Ensure inner elements inherit the dark text color
+    * {
+        color: var(--text-dark);
+    }
 }
 
 .viagem-info {
@@ -58,13 +60,18 @@
     text-align: center;
 }
 
-
 .chegada-card {
-    color: #fff;
+    background: var(--ion-color-light); // Changed background
+    color: var(--text-dark); // Adjust text color for light background
     padding: 0.5rem;
     border-radius: 1.2rem;
     margin: 1rem 0 2rem 0;
     text-align: center;
+
+    // Ensure inner elements inherit the dark text color
+    * {
+        color: var(--text-dark);
+    }
 }
 
 .tempo-restante {
@@ -80,23 +87,23 @@
     font-weight: 700;
     letter-spacing: -1px;
     margin: 0;
+    color: var(--text-dark); // Explicitly set dark color for contrast
 }
 
 ion-progress-bar {
     margin-bottom: 1rem;
-    --progress-background: var(--main-green-light); // Lighter green for the track
-    --buffer-background: rgba(165, 214, 167, 0.5); // Even lighter green for buffer
-    --background: var(--main-green-dark); // Darker green for the bar itself
+    --progress-background: var(--ion-color-vilaverde-tint); // Use tint for the track
+    --buffer-background: rgba(67, 138, 71, 0.5); // Use tint RGBa for buffer
+    --background: var(--ion-color-vilaverde-shade); // Use shade for the bar itself
     height: 8px; // Optional: Adjust height if needed
     border-radius: 4px; // Optional: Round corners
 }
-
 
 .cta-btn {
     --background: #fff;
     --background-hover: #ffd65c;
     --background-focused: #ffd65c;
-    --color: var(--main-green); // Use main green for text
+    --color: var(--ion-color-vilaverde); // Use base color for text
     font-weight: 600;
 }
 
@@ -131,8 +138,8 @@ ion-progress-bar {
     overflow: hidden;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
     scroll-snap-align: start;
-    background: var(--card-bg);
-    color: var(--text-dark);
+    background: var(--ion-color-light); // Changed background
+    color: var(--text-dark); // Adjust text color for light background
 }
 
 .popular-card img {
@@ -148,7 +155,7 @@ ion-progress-bar {
 
 .popular-card ion-card-title {
     font-size: 0.9rem;
-    color: var(--main-green-dark); // Use dark green
+    color: var(--ion-color-vilaverde-shade); // Use shade color
     margin: 0;
 }
 
@@ -162,8 +169,8 @@ ion-progress-bar {
 .footer-tab {
     --background: rgba(255, 255, 255, 0.15); // Keep glass effect
     backdrop-filter: blur(10px);
-    --color: #fff; // Keep text white
-    --color-selected: var(--color-selected-green); // Use light green for selected tab
+    --color: var(--ion-color-dark); // Changed to dark for inactive icons
+    --color-selected: var(--color-selected-green); // Use variable defined in :host
     font-size: 0.75rem;
     border: none;
 
@@ -190,5 +197,88 @@ ion-searchbar {
     /* garante que não puxa a cor primária azul do tema */
     .searchbar-input {
         background: transparent !important;
+    }
+}
+
+/* Cartão de Meteorologia */
+.weather-card {
+    margin-top: 1rem; // Add some space above the card
+    margin-bottom: 1.5rem;
+    background: var(--ion-color-light); // Changed background to light
+    color: var(--text-dark); // Changed default text color to dark
+    border-radius: 1.2rem; // Match other cards' border-radius
+    padding: 1.5rem; // Increased padding to make the card slightly larger
+
+    // Override glass effect background/blur if present
+    background-color: var(--ion-color-light) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border: none; // Remove border if it was part of glass effect
+
+    // Ensure all inner text elements use dark color
+    * {
+        color: var(--text-dark) !important; // Force dark text color
+    }
+
+    ion-card-header {
+        padding-bottom: 0.5rem; // Reduce bottom padding
+        padding-left: 0; // Remove default header padding if needed
+        padding-right: 0;
+        padding-top: 0;
+    }
+
+    ion-card-title {
+        color: var(--text-dark) !important; // Ensure title is dark
+        font-size: 1.2rem; // Adjust title size if needed
+    }
+
+    .weather-content {
+        display: flex;
+        flex-direction: column; // Stack main info and extra info vertically
+        gap: 0.8rem; // Space between sections
+    }
+
+    .weather-info {
+        display: flex;
+        align-items: center;
+        gap: 1rem; // Space between icon and text details
+    }
+
+    .weather-icon {
+        width: 60px; // Adjust size as needed
+        height: 60px;
+    }
+
+    .weather-details {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .temperature {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: var(--text-dark) !important; // Ensure temperature is dark
+    }
+
+    .description {
+        font-size: 1rem;
+        color: var(--text-dark) !important; // Ensure description is dark
+        opacity: 0.9;
+    }
+
+    .extra-info {
+        display: flex;
+        justify-content: space-around; // Distribute items evenly
+        font-size: 0.9rem;
+        color: var(--text-dark) !important; // Ensure extra info is dark
+        opacity: 0.8;
+        border-top: 1px solid rgba(0, 0, 0, 0.1); // Change separator line to dark
+        padding-top: 0.8rem;
+
+        span {
+            text-align: center;
+            color: var(--text-dark) !important; // Ensure spans are dark
+        }
     }
 }

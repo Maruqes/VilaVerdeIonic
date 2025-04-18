@@ -1,11 +1,9 @@
 :host {
     // Use a green gradient similar to the home page
-    --about-bg: linear-gradient(to top, #66bb6a, #2e7d32);
-    --card-bg-about: #ffffff;
+    --about-bg: linear-gradient(to top, var(--ion-color-vilaverde-tint), var(--ion-color-vilaverde)); // Use tint and base
     --text-color-about: #1f2937; // Darker gray for better readability
-    --title-color-about: #15803d; // Vibrant green title
-    --primary-green: #22c55e; // Define primary green for reuse
-    --shadow-color: rgba(34, 197, 94, 0.2); // Green shadow
+    --title-color-about: var(--ion-color-vilaverde); // Use base color
+    --shadow-color: rgba(46, 125, 50, 0.2); // Use RGB of vilaverde
 }
 
 .about-page {
@@ -15,8 +13,8 @@
 
 // Toolbar uses primary color defined in HTML
 ion-toolbar {
-    --background: var(--primary-green); // Use primary green for the header background
-    --color: #fff; // Ensure text is white on primary background
+    --background: var(--ion-color-vilaverde); // Use base color
+    --color: var(--ion-color-vilaverde-contrast); // Ensure text is white on primary background
 }
 
 .header-gif {
@@ -30,7 +28,7 @@ ion-toolbar {
     padding: 1rem 0;
 
     h2 {
-        color: var(--title-color-about);
+        color: var(--title-color-about); // Already uses variable, which is now --ion-color-vilaverde
         font-weight: 700;
         margin-bottom: 0.75rem;
         font-size: 1.8rem;
@@ -46,7 +44,7 @@ ion-toolbar {
 }
 
 .info-card {
-    --background: var(--card-bg-about);
+    --background: var(--ion-color-light); // Changed to use --ion-color-light
     border-radius: 16px; // Slightly more rounded corners
     margin-bottom: 1.5rem;
     overflow: hidden; // Ensure image corners are clipped
@@ -64,7 +62,7 @@ ion-toolbar {
     }
 
     ion-card-title {
-        color: var(--title-color-about);
+        color: var(--title-color-about); // Already uses variable, which is now --ion-color-vilaverde
         font-size: 1.2rem;
         font-weight: 600;
     }
@@ -93,7 +91,7 @@ ion-toolbar {
     border-radius: 12px;
 
     h3 {
-        color: var(--title-color-about);
+        color: var(--title-color-about); // Already uses variable, which is now --ion-color-vilaverde
         margin-bottom: 0.75rem;
     }
 

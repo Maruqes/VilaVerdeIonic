@@ -1,0 +1,58 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="success"> <!-- Use app's primary color -->
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button> <!-- Add back button -->
+    </ion-buttons>
+    <!-- Bind title to item name, show loading text if item is not yet loaded -->
+    <ion-title>{{ (item$ | async)?.name || 'Loading...' }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="item-detail-content ion-padding" *ngIf="item$ | async as item">
+  <!-- Check if item exists -->
+  <div *ngIf="item; else notFound">
+
+    <ion-card class="item-card">
+      <img [src]="item.image" [alt]="item.name" class="item-main-image" />
+      <ion-card-header>
+        <ion-card-title>{{ item.name }}</ion-card-title>
+        <ion-card-subtitle>{{ item.description }}</ion-card-subtitle>
+      </ion-card-header>
+
+        <ion-card-content>
+          <!-- Display extra description if available -->
+          <div *ngIf="item.extra" class="extra-description"> <!-- Changed ngIf condition -->
+            <h3>Mais Detalhes</h3>
+            <p>{{ item.extra.descricao }}</p>
+          </div>
+
+          <div *ngIf="(item.extra?.fotos?.length ?? 0) > 0" class="extra-photos">
+            <h3>Galeria</h3>
+
+            <!-- grelha -->
+            <ion-grid>
+          <ion-row>
+            <!-- Changed size to make images larger -->
+            <ion-col size="12" size-md="6" *ngFor="let foto of item.extra?.fotos">
+              <img [src]="foto" alt="Foto de {{ item.name }}" class="gallery-image" />
+            </ion-col>
+          </ion-row>
+            </ion-grid>
+          </div>
+
+
+        </ion-card-content>
+    </ion-card>
+
+  </div>
+
+  <!-- Template to show if item is not found -->
+  <ng-template #notFound>
+    <div class="ion-text-center ion-padding">
+      <h2>Item não encontrado</h2>
+      <p>O item que procura não existe ou foi removido.</p>
+      <ion-button routerLink="/home" color="success">Voltar à Página Inicial</ion-button>
+    </div>
+  </ng-template>
+
+</ion-content>
