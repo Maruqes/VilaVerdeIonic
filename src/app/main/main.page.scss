@@ -1,12 +1,11 @@
 :host {
-    // Removed old variables, rely on --ion-color-vilaverde from :root
     --text-dark: #1c1c1e;
-    --color-selected-green: var(--ion-color-vilaverde-tint); // Use tint for selected tab
+    --color-selected-green: var(--ion-color-vilaverde-tint);
 }
 
-// Apply gradient background
+// Apply refined gradient background
 .main-page {
-    --background: linear-gradient(165deg, var(--ion-color-vilaverde-tint) 0%, var(--ion-color-vilaverde) 100%);
+    --background: linear-gradient(165deg, #4caf50 0%, var(--ion-color-vilaverde) 100%);
 }
 
 // Enhanced header
@@ -19,41 +18,53 @@
     ion-title {
         font-weight: 700;
         font-size: 1.3rem;
+        opacity: 0.95;
     }
 
     .header-logo {
-        height: 40px;
+        height: 42px;
         margin-left: 8px;
-        border-radius: 8px;
+        border-radius: 10px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     }
 
     .theme-toggle-btn {
-        font-size: 1.2rem;
+        font-size: 1.25rem;
+        --background: rgba(255, 255, 255, 0.15);
+        --border-radius: 50%;
+        width: 38px;
+        height: 38px;
     }
 }
 
 // Enhanced searchbar
 .custom-searchbar {
-    --background: rgba(255, 255, 255, 0.15);
-    --border-radius: 12px;
+    --background: rgba(255, 255, 255, 0.18);
+    --border-radius: 14px;
     --color: var(--ion-color-primary-contrast);
     --placeholder-color: rgba(255, 255, 255, 0.8);
     --icon-color: var(--ion-color-primary-contrast);
     --clear-button-color: var(--ion-color-primary-contrast);
-    margin-bottom: 16px;
+    margin: 0 8px 16px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 
     .searchbar-input {
         background: transparent !important;
+        font-size: 16px;
+        font-weight: 400;
     }
 }
 
 // Enhanced weather card
 .weather-card {
-    border-radius: 16px;
-    background: var(--ion-card-background);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    margin-bottom: 24px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    margin: 16px 12px 24px;
     overflow: hidden;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 
     .weather-content {
         padding: 0;
@@ -62,26 +73,31 @@
     .weather-info {
         display: flex;
         align-items: center;
-        padding: 16px;
+        padding: 20px;
 
         .weather-icon {
-            width: 70px;
-            height: 70px;
+            width: 78px;
+            height: 78px;
             margin-right: 16px;
+            filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.2));
         }
 
         .weather-details {
             .temperature {
-                font-size: 2.2rem;
-                font-weight: 700;
+                font-size: 2.5rem;
+                font-weight: 800;
                 line-height: 1;
                 display: block;
-                margin-bottom: 4px;
+                margin-bottom: 6px;
+                background: linear-gradient(to right, var(--ion-color-vilaverde), #66bb6a);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
             }
 
             .description {
                 font-size: 1.1rem;
                 opacity: 0.9;
+                font-weight: 500;
             }
         }
     }
@@ -89,17 +105,19 @@
     .extra-info {
         display: flex;
         justify-content: space-around;
-        padding: 12px 10px;
-        border-top: 1px solid rgba(var(--ion-color-medium-rgb), 0.2);
+        padding: 15px 10px;
+        border-top: 1px solid rgba(var(--ion-color-medium-rgb), 0.15);
+        background-color: rgba(var(--ion-color-vilaverde-rgb), 0.05);
 
         span {
             display: flex;
             align-items: center;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
 
             ion-icon {
-                margin-right: 4px;
-                font-size: 1rem;
+                margin-right: 6px;
+                font-size: 1.1rem;
+                color: var(--ion-color-vilaverde);
             }
         }
     }
@@ -110,23 +128,27 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 16px;
+    margin: 0 16px 16px;
 
     h2 {
         color: var(--ion-color-primary-contrast);
-        font-size: 1.3rem;
-        font-weight: 700;
+        font-size: 1.5rem;
+        font-weight: 800;
         margin: 0;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
 
     ion-button {
         --color: var(--ion-color-primary-contrast);
         font-weight: 500;
-        font-size: 0.85rem;
+        font-size: 0.9rem;
         text-transform: none;
-        --padding-start: 0;
-        --padding-end: 0;
+        --padding-start: 8px;
+        --padding-end: 8px;
         margin: 0;
+        height: 30px;
+        --background: rgba(255, 255, 255, 0.2);
+        --border-radius: 15px;
     }
 }
 
@@ -135,57 +157,72 @@
     display: flex;
     gap: 16px;
     overflow-x: auto;
-    padding-bottom: 24px;
+    padding: 10px 16px 24px;
     scroll-snap-type: x mandatory;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 
     &::-webkit-scrollbar {
-        height: 4px;
-    }
-
-    &::-webkit-scrollbar-thumb {
-        background: rgba(255, 255, 255, 0.3);
-        border-radius: 2px;
+        display: none;
     }
 }
 
 // Enhanced popular cards
 .popular-card {
-    flex: 0 0 180px;
-    border-radius: 16px;
+    flex: 0 0 190px;
+    border-radius: 18px;
     overflow: hidden;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
     scroll-snap-align: start;
     background: var(--ion-card-background);
     margin: 0;
+    transform: translateY(0);
+    transition: transform 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.35s ease;
 
     .card-img-container {
-        height: 130px;
+        height: 140px;
         overflow: hidden;
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 50%;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
+        }
 
         img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.3s ease;
+            transition: transform 0.5s ease;
         }
     }
 
-    &:active img {
-        transform: scale(1.05);
+    &:active {
+        transform: translateY(-5px);
+        box-shadow: 0 18px 30px rgba(0, 0, 0, 0.18);
+
+        img {
+            transform: scale(1.08);
+        }
     }
 
     ion-card-header {
-        padding: 12px;
+        padding: 14px;
 
         ion-card-title {
-            font-size: 1rem;
+            font-size: 1.05rem;
             font-weight: 700;
-            margin-bottom: 4px;
+            margin-bottom: 6px;
             color: var(--ion-color-vilaverde);
         }
 
         p {
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             margin: 0;
             color: var(--ion-text-color);
             opacity: 0.9;
@@ -200,10 +237,17 @@
 
 // Event cards styling
 .event-card {
-    border-radius: 16px;
-    margin-bottom: 16px;
+    border-radius: 18px;
+    margin: 0 12px 16px;
     background: var(--ion-card-background);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:active {
+        transform: scale(0.98);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
 
     ion-card-content {
         display: flex;
@@ -216,23 +260,28 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        width: 70px;
-        height: 60px;
-        border-radius: 8px;
-        background: var(--ion-color-vilaverde);
+        width: 75px;
+        height: 75px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, var(--ion-color-vilaverde), #66bb6a);
         color: white;
-        margin-right: 16px;
+        margin-right: 18px;
+        box-shadow: 0 4px 10px rgba(var(--ion-color-vilaverde-rgb), 0.3);
 
         .event-day {
-            font-size: 1.6rem;
-            font-weight: 700;
+            font-size: 1.7rem;
+            font-weight: 800;
             line-height: 1;
+            margin-bottom: 3px;
+            letter-spacing: -0.5px;
         }
 
         .event-month {
-            font-size: 0.8rem;
-            font-weight: 500;
+            font-size: 0.9rem;
+            font-weight: 600;
             text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.95;
         }
     }
 
@@ -240,23 +289,49 @@
         flex: 1;
 
         h3 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin: 0 0 8px 0;
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin: 0 0 10px 0;
+            color: var(--ion-text-color);
         }
 
         p {
             display: flex;
             align-items: center;
-            margin: 4px 0;
+            margin: 6px 0;
             font-size: 0.9rem;
             color: var(--ion-text-color);
             opacity: 0.85;
 
             ion-icon {
-                margin-right: 6px;
-                font-size: 1rem;
+                margin-right: 8px;
+                font-size: 1.1rem;
+                color: var(--ion-color-vilaverde);
+                opacity: 0.9;
             }
         }
+    }
+}
+
+// Ajustes para modo escuro
+:host-context(body.dark-theme) {
+    .weather-card {
+        background: rgba(30, 30, 30, 0.9);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+
+        .weather-details .temperature {
+            background: linear-gradient(to right, #4caf50, #81c784);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+
+    .section-header h2 {
+        color: white;
+    }
+
+    .popular-card ion-card-header ion-card-title,
+    .event-details h3 {
+        color: white;
     }
 }

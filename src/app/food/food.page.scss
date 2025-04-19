@@ -5,65 +5,151 @@
 // Define green color variables consistent with main.page.scss - REMOVED, rely on --ion-color-vilaverde from :root
 :host {
     --text-dark: #1c1c1e;
-    --color-selected-green: var(--ion-color-vilaverde-tint); // Use tint for selected tab
+    --color-selected-green: var(--ion-color-vilaverde-tint);
 }
 
-// Apply green gradient background
+/* Fundo com gradiente refinado */
 .food-page {
-    --background: linear-gradient(135deg, var(--ion-color-vilaverde-tint) 0%, var(--ion-color-vilaverde) 100%); // Use tint and base
+    --background: linear-gradient(135deg, #4caf50 0%, var(--ion-color-vilaverde) 100%);
 }
 
-// Update header to use green
+/* Header transparente aprimorado */
 .header-transparent {
     ion-toolbar {
-        --background: var(--ion-color-vilaverde); // Use base color
-        --ion-color-base: var(--ion-color-vilaverde); // Match base color
-        border: none;
+        --background: transparent;
+        --ion-color-base: transparent;
+        --border-width: 0;
     }
 
-    ion-title,
+    ion-title {
+        font-weight: 800;
+        font-size: 1.4rem;
+        color: white !important;
+        opacity: 0.95;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        letter-spacing: -0.3px;
+    }
+
     ion-icon,
     ion-buttons ion-icon {
-        color: var(--ion-color-vilaverde-contrast) !important; // Use contrast color
+        color: white !important;
     }
 }
 
-// Styles adapted from .popular-card in main.page.scss
+/* Cards de comida aprimorados */
 .food-card {
-    margin: 0 0 1.5rem 0; // Increased bottom margin for spacing
-    border-radius: 1rem;
+    margin: 16px 12px;
+    border-radius: 18px;
     overflow: hidden;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18); // Slightly enhanced shadow
-    background: var(--ion-color-light); // Changed to use --ion-color-light
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    background: rgba(255, 255, 255, 0.95);
     color: var(--text-dark);
     display: flex;
-    flex-direction: column; // Arrange image and text vertically
-    // Removed fixed height to allow content to determine size
+    flex-direction: column;
+    transition: transform 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.35s ease;
+    transform: translateY(0);
+
+    &:active {
+        transform: translateY(-8px) scale(0.98);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    }
+
+    img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 50%;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
+            z-index: 1;
+        }
+    }
+
+    &:active img {
+        transform: scale(1.08);
+    }
+
+    ion-card-header {
+        position: relative;
+        text-align: left;
+        padding: 16px 18px;
+        width: 100%;
+    }
+
+    ion-card-title {
+        font-size: 1.25rem;
+        color: var(--ion-color-vilaverde);
+        margin: 0 0 8px 0;
+        font-weight: 700;
+        letter-spacing: -0.3px;
+    }
+
+    p {
+        font-size: 0.95rem;
+        color: var(--text-dark);
+        margin: 0;
+        line-height: 1.5;
+        opacity: 0.85;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+    }
 }
 
-.food-card img {
-    width: 100%; // Image takes full width of the card
-    height: 180px; // Increased fixed height for the image
-    object-fit: cover;
-    // Removed flex-shrink as it's not needed in column layout
+/* Animação para as cards */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.food-card ion-card-header {
-    text-align: left;
-    padding: 1rem; // Increased padding
-    width: 100%; // Ensure header takes full width
-    // Removed flex-grow as it's not needed in column layout
+ion-content ion-card:nth-child(1) {
+    animation: fadeInUp 0.6s 0.1s both;
 }
 
-.food-card ion-card-title {
-    font-size: 1.1rem; // Slightly larger title
-    color: var(--ion-color-vilaverde-shade); // Use shade color
-    margin: 0 0 0.35rem 0; // Adjusted margin
-    font-weight: 600;
+ion-content ion-card:nth-child(2) {
+    animation: fadeInUp 0.6s 0.2s both;
 }
 
-.food-card p {
-    font-size: 0.9rem; // Slightly larger description text
-    color: var(--text-dark);
-    margin: 0;
+ion-content ion-card:nth-child(3) {
+    animation: fadeInUp 0.6s 0.3s both;
+}
+
+ion-content ion-card:nth-child(4) {
+    animation: fadeInUp 0.6s 0.4s both;
+}
+
+ion-content ion-card:nth-child(5) {
+    animation: fadeInUp 0.6s 0.5s both;
+}
+
+/* Ajustes para modo escuro */
+:host-context(body.dark-theme) {
+    .food-card {
+        background: rgba(30, 30, 30, 0.9);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+
+        ion-card-title {
+            color: #81c784;
+        }
+
+        p {
+            color: rgba(255, 255, 255, 0.85);
+        }
+    }
 }

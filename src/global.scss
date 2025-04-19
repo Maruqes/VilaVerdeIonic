@@ -74,3 +74,149 @@ ion-content {
 ion-content.with-transparent-header {
     --padding-top: calc(56px + var(--ion-safe-area-top, 0));
 }
+
+/* Estilos globais aprimorados */
+:root {
+    /* Animações globais */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+
+    /* Sombras refinadas */
+    --shadow-soft: 0 4px 15px rgba(0, 0, 0, 0.07);
+    --shadow-medium: 0 6px 20px rgba(0, 0, 0, 0.12);
+    --shadow-hard: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilos de cartão aprimorados */
+ion-card {
+    border-radius: 16px;
+    overflow: hidden;
+    margin: 16px;
+    box-shadow: var(--shadow-soft);
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+
+    &:active {
+        transform: scale(0.98);
+        box-shadow: var(--shadow-medium);
+    }
+}
+
+/* Efeito de cartão de vidro */
+.glass-card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: var(--shadow-soft);
+}
+
+/* Botões elegantes */
+ion-button {
+    --border-radius: 12px;
+    font-weight: 500;
+    letter-spacing: 0.4px;
+    text-transform: none;
+    height: 48px;
+
+    &.action-button {
+        --box-shadow: var(--shadow-medium);
+        margin: 16px;
+    }
+}
+
+/* Tipografia melhorada */
+h1,
+h2,
+h3,
+ion-card-title {
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+/* Efeitos de imagem */
+.img-rounded {
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.img-shadow {
+    box-shadow: var(--shadow-soft);
+}
+
+/* Cabeçalhos de seção elegantes */
+.section-header {
+    margin: 24px 16px 16px;
+
+    h2 {
+        color: var(--ion-color-dark);
+        font-size: 24px;
+        margin: 0;
+        position: relative;
+        display: inline-block;
+
+        &:after {
+            content: "";
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            border-radius: 3px;
+            background-color: var(--ion-color-vilaverde);
+        }
+    }
+}
+
+/* Modo escuro */
+.dark-theme {
+    .glass-card {
+        background: rgba(30, 30, 30, 0.7);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+}
+
+/* Componentes de entrada de texto refinados */
+ion-input,
+ion-textarea,
+ion-select {
+    --background: rgba(var(--ion-color-light-rgb), 0.8);
+    --border-radius: 12px;
+    --padding-start: 16px;
+    --padding-end: 16px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+}
+
+/* Animações de fade */
+.fade-in {
+    animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Ajustes responsivos */
+@media (min-width: 768px) {
+    ion-card {
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 992px) {
+    ion-content.centered-content .content-container {
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
