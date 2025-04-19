@@ -1,32 +1,56 @@
 ion-tab-bar {
-    // Use theme variable for background, fallback to light color
-    --background: var(--ion-tab-bar-background, var(--ion-color-light));
-    border-top: 1px solid var(--ion-color-medium-shade);
+    --background: var(--ion-tab-bar-background, rgba(255, 255, 255, 0.95));
+    border-top: 1px solid rgba(var(--ion-color-medium-rgb), 0.2);
+    height: 56px;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.05);
+    padding-bottom: env(safe-area-inset-bottom, 0);
 }
 
 ion-tab-button {
-    // Use theme variable for default color, fallback to medium
-    --color: var(--ion-tab-bar-color, var(--ion-color-medium));
-    --color-selected: var(--ion-color-vilaverde); // Use vilaverde color
+    --color: var(--ion-color-medium);
+    --color-selected: var(--ion-color-vilaverde);
+    transition: all 0.2s ease;
 
     ion-icon {
-        font-size: 1.5rem; // Adjust icon size
-        // Remove hardcoded color, let --color handle it
+        font-size: 22px;
+        transition: transform 0.2s ease;
     }
 
     ion-label {
-        font-size: 0.75rem; // Adjust label size
-        // Remove hardcoded color, let --color handle it
+        font-size: 11px;
+        font-weight: 500;
+        margin-top: 2px;
     }
 
     &.tab-selected {
         ion-icon {
+            transform: translateY(-2px);
             color: var(--ion-color-vilaverde) !important;
         }
 
         ion-label {
             color: var(--ion-color-vilaverde) !important;
-            font-weight: bold;
+            font-weight: 600;
+            transform: translateY(-1px);
         }
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 24px;
+            height: 3px;
+            border-radius: 3px;
+            background-color: var(--ion-color-vilaverde);
+        }
+    }
+}
+
+// Dark mode adjustments
+:host-context(body.dark-theme) {
+    ion-tab-bar {
+        --background: var(--ion-tab-bar-background, rgba(30, 30, 30, 0.95));
     }
 }

@@ -5,6 +5,7 @@ import { Observable, Subscription } from 'rxjs';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { TitleCasePipe } from '@angular/common';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-main',
@@ -53,7 +54,8 @@ export class MainPage implements OnInit, OnDestroy {
   }
 
   fetchWeatherData() {
-    const apiUrl = '/vilaverde-api/vilaverde'; // Use the proxy path
+    // Usar a URL da API definida no environment em vez do caminho relativo
+    const apiUrl = environment.weatherApiUrl;
     this.http.get(apiUrl).subscribe({
       next: (data: any) => {
         this.weatherData = data;

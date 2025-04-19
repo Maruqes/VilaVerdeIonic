@@ -35,3 +35,42 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import "@ionic/angular/css/palettes/dark.system.css";
+
+/**
+ * Ajustes para a barra de status no Android
+ * ------------------------------------------------
+ * Evita que a barra de status cubra o conteúdo do app
+ */
+ion-header {
+    padding-top: var(--ion-safe-area-top, 0);
+    height: calc(56px + var(--ion-safe-area-top, 0));
+}
+
+ion-toolbar {
+    --min-height: 56px;
+    padding-top: var(--ion-safe-area-top, 0);
+}
+
+ion-content {
+    --padding-top: var(--ion-safe-area-top, 0);
+}
+
+/* Ajuste para o header transparente em páginas específicas */
+.header-transparent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+
+    ion-toolbar {
+        --background: transparent;
+        --border-width: 0;
+        padding-top: var(--ion-safe-area-top, 0);
+    }
+}
+
+/* Ajuste para conteúdo com header transparente */
+ion-content.with-transparent-header {
+    --padding-top: calc(56px + var(--ion-safe-area-top, 0));
+}

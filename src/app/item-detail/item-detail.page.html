@@ -1,58 +1,105 @@
-<ion-header [translucent]="true">
-  <ion-toolbar color="success"> <!-- Use app's primary color -->
+<ion-header>
+  <ion-toolbar class="detail-toolbar" style="padding-top: var(--ion-safe-area-top);">
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/home"></ion-back-button> <!-- Add back button -->
+      <ion-back-button defaultHref="/main" text=""></ion-back-button>
     </ion-buttons>
-    <!-- Bind title to item name, show loading text if item is not yet loaded -->
+    <div class="toolbar-background"></div>
     <ion-title>{{ (item$ | async)?.name || 'Loading...' }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" class="item-detail-content ion-padding" *ngIf="item$ | async as item">
+<ion-content class="item-detail-content" *ngIf="item$ | async as item">
   <!-- Check if item exists -->
   <div *ngIf="item; else notFound">
+    <!-- Hero image with gradient overlay -->
+    <div class="hero-image">
+      <img [src]="item.image" [alt]="item.name" />
+      <div class="image-overlay"></div>
+    </div>
 
-    <ion-card class="item-card">
-      <img [src]="item.image" [alt]="item.name" class="item-main-image" />
-      <ion-card-header>
-        <ion-card-title>{{ item.name }}</ion-card-title>
-        <ion-card-subtitle>{{ item.description }}</ion-card-subtitle>
-      </ion-card-header>
+    <div class="content-container ion-padding">
+      <div class="item-header">
+        <h1>{{ item.name }}</h1>
+        <p class="item-description">{{ item.description }}</p>
 
-        <ion-card-content>
-          <!-- Display extra description if available -->
-          <div *ngIf="item.extra" class="extra-description"> <!-- Changed ngIf condition -->
-            <h3>Mais Detalhes</h3>
-            <p>{{ item.extra.descricao }}</p>
+        <!-- Quick info badges -->
+        <div class="info-badges">
+          <span class="info-badge">
+            <ion-icon name="location-outline"></ion-icon> Vila Verde
+          </span>
+          <span class="info-badge">
+            <ion-icon name="star"></ion-icon> {{ item.extra?.rating || '4.8' }}
+          </span>
+        </div>
+      </div>
+
+      <!-- Main content -->
+      <div class="section" *ngIf="item.extra">
+        <h2>Mais Detalhes</h2>
+        <p class="detail-text">{{ item.extra.descricao }}</p>
+      </div>
+
+      <!-- Photo gallery -->
+      <div class="section" *ngIf="(item.extra?.fotos?.length ?? 0) > 0">
+        <div class="section-header">
+          <h2>Galeria</h2>
+          <span class="gallery-count">{{ item.extra?.fotos?.length }} fotos</span>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="gallery-item" *ngFor="let foto of item.extra?.fotos; let i = index"
+            (click)="openPhotoModal(i, item.extra?.fotos)">
+            <img [src]="foto" alt="Foto de {{ item.name }}" />
           </div>
-
-          <div *ngIf="(item.extra?.fotos?.length ?? 0) > 0" class="extra-photos">
-            <h3>Galeria</h3>
-
-            <!-- grelha -->
-            <ion-grid>
-          <ion-row>
-            <!-- Changed size to make images larger -->
-            <ion-col size="12" size-md="6" *ngFor="let foto of item.extra?.fotos">
-              <img [src]="foto" alt="Foto de {{ item.name }}" class="gallery-image" />
-            </ion-col>
-          </ion-row>
-            </ion-grid>
-          </div>
-
-
-        </ion-card-content>
-    </ion-card>
-
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- Template to show if item is not found -->
   <ng-template #notFound>
-    <div class="ion-text-center ion-padding">
+    <div class="not-found-container">
+      <ion-icon name="alert-circle-outline"></ion-icon>
       <h2>Item não encontrado</h2>
       <p>O item que procura não existe ou foi removido.</p>
-      <ion-button routerLink="/home" color="success">Voltar à Página Inicial</ion-button>
+      <ion-button routerLink="/main" shape="round">
+        <ion-icon name="home-outline" slot="start"></ion-icon>
+        Voltar à Página Inicial
+      </ion-button>
     </div>
   </ng-template>
 
 </ion-content>
+
+<!-- Photo Modal -->
+<ion-modal [isOpen]="isPhotoModalOpen" [backdropDismiss]="true" (didDismiss)="closePhotoModal()" class="photo-modal">
+  <ng-template>
+    <div class="modal-content" (click)="onBackdropClick($event)">
+      <div class="close-button" (click)="closePhotoModal()">
+        <ion-icon name="close-outline"></ion-icon>
+      </div>
+
+      <swiper-container [options]="slideOptions" #photoSlides>
+        <swiper-slide *ngFor="let foto of currentPhotos">
+          <div class="swipe-container">
+            <img [src]="foto" class="modal-photo" />
+          </div>
+        </swiper-slide>
+      </swiper-container>
+
+      <div class="photo-counter" *ngIf="currentPhotos && currentPhotos.length > 0">
+        {{ currentPhotoIndex + 1 }} / {{ currentPhotos.length }}
+      </div>
+    </div>
+  </ng-template>
+</ion-modal>
+
+<!-- Action Button -->
+<ion-footer class="ion-no-border" *ngIf="item$ | async as item">
+  <div class="footer-container" *ngIf="item.extra?.mapLink && item.extra?.mapLink !== ''">
+    <ion-button expand="block" shape="round" class="action-button" [href]="item.extra?.mapLink" target="_blank">
+      <ion-icon name="navigate-outline" slot="start"></ion-icon>
+      Como Chegar
+    </ion-button>
+  </div>
+</ion-footer>

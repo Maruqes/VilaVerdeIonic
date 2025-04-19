@@ -72,3 +72,358 @@ ion-card-content {
 .not-found {
     color: rgb(34, 36, 40); // Use standard dark color
 }
+
+// Detail page styling
+.detail-toolbar {
+    --background: transparent;
+    --color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    --border-width: 0;
+
+    ion-title {
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7); // Adiciona sombra ao texto para legibilidade
+        font-weight: 600;
+    }
+
+    ion-back-button,
+    ion-button {
+        --color: white;
+        --background: rgba(0, 0, 0, 0.3);
+        --border-radius: 50%;
+        --padding-start: 8px;
+        --padding-end: 8px;
+        width: 36px;
+        height: 36px;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7); // Adiciona sombra ao texto para legibilidade
+    }
+
+    .toolbar-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2));
+        z-index: -1;
+    }
+}
+
+.hero-image {
+    position: relative;
+    height: 300px;
+    width: 100%;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .image-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 120px;
+        background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.7));
+    }
+}
+
+.content-container {
+    position: relative;
+    margin-top: -40px;
+    border-radius: 24px 24px 0 0;
+    background-color: var(--ion-background-color);
+    z-index: 1;
+    padding-bottom: 100px;
+}
+
+.item-header {
+    margin-bottom: 24px;
+
+    h1 {
+        margin-top: 8px;
+        margin-bottom: 8px;
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: var(--ion-color-primary); // Alterando para a cor primária para melhor contraste
+    }
+
+    .item-description {
+        color: #333333; // Changed to a darker color for better readability in light mode
+        font-size: 1rem;
+        margin-bottom: 16px;
+    }
+}
+
+.info-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 8px;
+
+    .info-badge {
+        display: inline-flex;
+        align-items: center;
+        background-color: rgba(var(--ion-color-vilaverde-rgb), 0.1);
+        color: var(--ion-color-vilaverde);
+        padding: 6px 12px;
+        border-radius: 16px;
+        font-size: 0.8rem;
+
+        ion-icon {
+            margin-right: 4px;
+        }
+    }
+}
+
+.section {
+    margin-bottom: 28px;
+
+    h2 {
+        font-size: 1.3rem;
+        font-weight: 600;
+        margin-bottom: 12px;
+        color: var(--ion-text-color);
+    }
+
+    .detail-text {
+        color: #333333; // Changed to a darker color for better readability in light mode
+        opacity: 1; // Aumentando a opacidade para 1 para melhorar a legibilidade
+        line-height: 1.6;
+        font-size: 0.95rem;
+        font-weight: 500; // Adicionando um peso de fonte maior para melhor contraste
+    }
+
+    .section-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 12px;
+
+        .gallery-count {
+            color: var(--ion-color-medium);
+            font-size: 0.85rem;
+        }
+    }
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+
+    .gallery-item {
+        aspect-ratio: 3/2;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        cursor: pointer;
+        transition: transform 0.2s ease;
+
+        &:hover {
+            transform: scale(1.02);
+        }
+
+        &:active {
+            transform: scale(0.98);
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+.related-scroll {
+    display: flex;
+    overflow-x: auto;
+    gap: 16px;
+    padding-bottom: 12px;
+
+    &::-webkit-scrollbar {
+        height: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: rgba(var(--ion-color-medium-rgb), 0.3);
+        border-radius: 2px;
+    }
+
+    .related-card {
+        flex: 0 0 220px;
+        border-radius: 12px;
+        overflow: hidden;
+        background-color: var(--ion-card-background);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+        img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+        }
+
+        .related-info {
+            padding: 12px;
+
+            h3 {
+                margin: 0 0 4px 0;
+                font-size: 0.95rem;
+                font-weight: 600;
+            }
+
+            span {
+                font-size: 0.8rem;
+                color: var(--ion-color-medium);
+            }
+        }
+    }
+}
+
+.photo-modal {
+    --backdrop-opacity: 0.85;
+    --backdrop-filter: blur(8px);
+    --width: 100%;
+    --height: 100%;
+    --box-shadow: none;
+    --background: transparent;
+
+    ion-backdrop {
+        backdrop-filter: blur(8px);
+    }
+
+    .modal-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        position: relative;
+    }
+
+    .close-button {
+        position: absolute;
+        top: max(20px, env(safe-area-inset-top));
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+        cursor: pointer;
+
+        ion-icon {
+            font-size: 24px;
+            color: white;
+        }
+    }
+
+    swiper-container {
+        width: 100%;
+        height: 100%;
+    }
+
+    swiper-slide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .swipe-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+        padding: 20px;
+    }
+
+    .modal-photo {
+        max-width: 100%;
+        max-height: 80vh;
+        object-fit: contain;
+        border-radius: 8px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    .photo-counter {
+        position: absolute;
+        bottom: max(20px, env(safe-area-inset-bottom));
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        padding: 6px 12px;
+        border-radius: 16px;
+        font-size: 14px;
+    }
+}
+
+.not-found-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 24px;
+    text-align: center;
+
+    ion-icon {
+        font-size: 64px;
+        color: var(--ion-color-medium);
+        margin-bottom: 16px;
+    }
+
+    h2 {
+        color: var(--ion-text-color);
+        margin-bottom: 8px;
+    }
+
+    p {
+        color: var(--ion-color-medium);
+        margin-bottom: 24px;
+    }
+}
+
+.footer-container {
+    padding: 12px 16px;
+    padding-bottom: max(12px, env(safe-area-inset-bottom));
+    background-color: var(--ion-background-color);
+    border-top: 1px solid rgba(var(--ion-color-medium-rgb), 0.1);
+
+    .action-button {
+        --background: var(--ion-color-vilaverde);
+        --padding-top: 12px;
+        --padding-bottom: 12px;
+        --padding-start: 24px;
+        --padding-end: 24px;
+        font-weight: 600;
+        margin: 0;
+    }
+}
+
+// Dark mode adjustments
+:host-context(body.dark-theme) {
+    .info-badges .info-badge {
+        background-color: rgba(var(--ion-color-vilaverde-rgb), 0.2);
+    }
+
+    .item-header .item-description {
+        color: #ffffff; // White text for dark mode
+    }
+
+    .section .detail-text {
+        color: #ffffff; // White text for dark mode
+    }
+}

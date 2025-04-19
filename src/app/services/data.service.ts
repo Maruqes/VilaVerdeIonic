@@ -6,6 +6,8 @@ import { map } from 'rxjs/operators';
 export interface ItemExtra { // Define interface for extra details
   fotos: string[];
   descricao: string;
+  rating?: number; // Classificação de estrelas
+  mapLink?: string; // Link para o Google Maps
 }
 
 export interface Item {

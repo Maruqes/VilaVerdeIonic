@@ -14,7 +14,9 @@
                     "assets/palacio/palacio5.webp",
                     "assets/palacio/palacio6.webp"
                 ],
-                "descricao": "Cozinha tradicional portuguesa com pratos de conforto e receitas familiares."
+                "descricao": "Cozinha tradicional portuguesa com pratos de conforto e receitas familiares.",
+                "rating": 4.6,
+                "mapLink": "https://maps.app.goo.gl/uFL61UHtRFpgnefB7"
             }
         },
         {
@@ -33,7 +35,9 @@
                     "assets/tasquinha/tasquinha7.jpg",
                     "assets/tasquinha/tasquinha8.jpg"
                 ],
-                "descricao": "Petiscos e pratos regionais servidos num ambiente acolhedor."
+                "descricao": "Petiscos e pratos regionais servidos num ambiente acolhedor.",
+                "rating": 4.8,
+                "mapLink": "https://maps.app.goo.gl/rsK6E41QPXSXHJCm7"
             }
         },
         {
@@ -50,7 +54,9 @@
                     "assets/camada/camada5.jpg",
                     "assets/camada/camada6.jpg"
                 ],
-                "descricao": "Francesinhas generosas acompanhadas por cervejas artesanais."
+                "descricao": "Francesinhas generosas acompanhadas por cervejas artesanais.",
+                "rating": 4.5,
+                "mapLink": "https://maps.app.goo.gl/1gHSgLzYY8wGgXCZ7"
             }
         },
         {
@@ -60,7 +66,9 @@
             "description": "Pregaria artesanal.",
             "extra": {
                 "fotos": [],
-                "descricao": "Pregos no pão feitos na hora com ingredientes frescos."
+                "descricao": "Pregos no pão feitos na hora com ingredientes frescos.",
+                "rating": 3.5,
+                "mapLink": "https://maps.app.goo.gl/Zp52GazoN3P5fD5c6"
             }
         },
         {
@@ -74,7 +82,9 @@
                     "assets/campo/campo2.jpg",
                     "assets/campo/campo3.jpg"
                 ],
-                "descricao": "Espaço rústico com pratos típicos e ambiente descontraído."
+                "descricao": "Espaço rústico com pratos típicos e ambiente descontraído.",
+                "rating": 3.8,
+                "mapLink": "https://maps.app.goo.gl/7GauMAtUDbdhsXLv7"
             }
         },
         {
@@ -91,7 +101,9 @@
                     "assets/dama/dama5.jpg",
                     "assets/dama/dama6.jpg"
                 ],
-                "descricao": "Hambúrgueres criativos com produtos locais."
+                "descricao": "Hambúrgueres criativos com produtos locais.",
+                "rating": 3.9,
+                "mapLink": "https://maps.app.goo.gl/j57FFw41LvhDhmxt7"
             }
         },
         {
@@ -107,7 +119,9 @@
                     "assets/letra/letra4.jpg",
                     "assets/letra/letra5.jpg"
                 ],
-                "descricao": "Taproom dedicado à cerveja artesanal produzida no Minho."
+                "descricao": "Taproom dedicado à cerveja artesanal produzida no Minho.",
+                "rating": 4.8,
+                "mapLink": "https://maps.app.goo.gl/SBX4cy9RhUPRTdE28"
             }
         },
         {
@@ -126,7 +140,9 @@
                     "assets/mama/mama7.jpg",
                     "assets/mama/mama8.jpg"
                 ],
-                "descricao": "Menu diversificado de comfort‑food e cervejas."
+                "descricao": "Menu diversificado de comfort‑food e cervejas.",
+                "rating": 4.2,
+                "mapLink": "https://maps.app.goo.gl/WNshMfHroo2szhCU6"
             }
         },
         {
@@ -141,7 +157,9 @@
                     "assets/central/central3.jpg",
                     "assets/central/central4.jpg"
                 ],
-                "descricao": "Frango e carnes na brasa, temperados à moda antiga."
+                "descricao": "Frango e carnes na brasa, temperados à moda antiga.",
+                "rating": 4,
+                "mapLink": "https://maps.app.goo.gl/KPcbzQFYDU5Prr7t7"
             }
         },
         {
@@ -166,7 +184,9 @@
                     "assets/terminal/terminal13.webp",
                     "assets/terminal/terminal14.webp"
                 ],
-                "descricao": "Hambúrgueres generosos servidos num espaço industrial chic."
+                "descricao": "Hambúrgueres generosos servidos num espaço industrial chic.",
+                "rating": 4.4,
+                "mapLink": "https://maps.app.goo.gl/FfAzzp2NkL3MjnbF8"
             }
         },
         {
@@ -176,7 +196,9 @@
             "description": "Cozinha tradicional portuguesa.",
             "extra": {
                 "fotos": [],
-                "descricao": "Receitas caseiras e serviço familiar."
+                "descricao": "Receitas caseiras e serviço familiar.",
+                "rating": 4.1,
+                "mapLink": "https://maps.app.goo.gl/E4RH2ix4YiVMPUap6"
             }
         },
         {
@@ -196,7 +218,9 @@
                     "assets/hells/hells8.jpg",
                     "assets/hells/hells9.jpg"
                 ],
-                "descricao": "Cortes premium grelhados no ponto certo."
+                "descricao": "Cortes premium grelhados no ponto certo.",
+                "rating": 4.8,
+                "mapLink": "https://maps.app.goo.gl/gsZt1kYQMUtJiona9"
             }
         },
         {
@@ -213,7 +237,9 @@
                     "assets/barros/barros5.jpg",
                     "assets/barros/barros6.jpg"
                 ],
-                "descricao": "Carnes assadas na brasa com receitas tradicionais."
+                "descricao": "Carnes assadas na brasa com receitas tradicionais.",
+                "rating": 4.6,
+                "mapLink": "https://maps.app.goo.gl/i5Xcnzr4kTBdXLNZ6"
             }
         }
     ],
@@ -232,7 +258,9 @@
                     "assets/billa/billa5.jpg",
                     "assets/billa/billa6.jpg"
                 ],
-                "descricao": "Cocktails de autor e ambiente descontraído."
+                "descricao": "Cocktails de autor e ambiente descontraído.",
+                "rating": 5,
+                "mapLink": "https://maps.app.goo.gl/Lo7V4d2jNep9V3h79"
             }
         },
         {
@@ -242,7 +270,9 @@
             "description": "Bar de cocktails e bebidas variadas.",
             "extra": {
                 "fotos": [],
-                "descricao": "Clássicos e criações próprias servidos com boa música."
+                "descricao": "Clássicos e criações próprias servidos com boa música.",
+                "rating": null,
+                "mapLink": "https://maps.app.goo.gl/ATorUxetn6dvWRyQA"
             }
         },
         {
@@ -254,7 +284,9 @@
                 "fotos": [
                     "assets/tuna/tuna1.jpg"
                 ],
-                "descricao": "Extensa carta de bebidas num espaço animado."
+                "descricao": "Extensa carta de bebidas num espaço animado.",
+                "rating": 4.9,
+                "mapLink": "https://maps.app.goo.gl/THa5KocCG8XNUiWS6"
             }
         }
     ],
@@ -272,7 +304,9 @@
                     "assets/lenco/lenco4.webp",
                     "assets/lenco/lenco5.jpg"
                 ],
-                "descricao": "Artesanato minhoto repleto de simbolismo e história."
+                "descricao": "Artesanato minhoto repleto de simbolismo e história.",
+                "rating": 5,
+                "mapLink": ""
             }
         },
         {
@@ -286,7 +320,9 @@
                     "assets/campo/campo2.jpg",
                     "assets/campo/campo3.jpg"
                 ],
-                "descricao": "Espaço rústico com pratos típicos e ambiente descontraído."
+                "descricao": "Espaço rústico com pratos típicos e ambiente descontraído.",
+                "rating": 4.2,
+                "mapLink": "https://maps.app.goo.gl/7GauMAtUDbdhsXLv7"
             }
         },
         {
@@ -303,7 +339,9 @@
                     "assets/billa/billa5.jpg",
                     "assets/billa/billa6.jpg"
                 ],
-                "descricao": "Cocktails de autor e ambiente descontraído."
+                "descricao": "Cocktails de autor e ambiente descontraído.",
+                "rating": 5,
+                "mapLink": "https://maps.app.goo.gl/Lo7V4d2jNep9V3h79"
             }
         },
         {
@@ -330,7 +368,9 @@
                     "assets/moure/moure15.jpg",
                     "assets/moure/moure16.jpg"
                 ],
-                "descricao": "Espaço cultural e eventos com uma programação diversificada."
+                "descricao": "Espaço cultural e eventos com uma programação diversificada.",
+                "rating": 5,
+                "mapLink": "https://maps.app.goo.gl/YqGZYvf4yzV8qH5U9"
             }
         }
     ]

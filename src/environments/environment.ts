@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  weatherApiUrl: 'https://vilaverde.marquesserver.freeddns.org:10513/vilaverde'
 };
 
 /*

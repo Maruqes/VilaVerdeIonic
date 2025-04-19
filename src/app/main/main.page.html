@@ -1,25 +1,22 @@
 <!-- main.page.html (rev) -->
 
-<ion-header>
-  <ion-toolbar color="primary">
+<ion-header class="header-transparent">
+  <ion-toolbar>
     <ion-buttons slot="start">
-      <img src="assets/vila_verde.gif" alt="Vila Verde Logo" style="height: 40px; margin-left: 10px;" />
+      <img src="assets/vila_verde.gif" alt="Vila Verde Logo" class="header-logo" />
     </ion-buttons>
-    <ion-title>Vila Verde App</ion-title>
+    <ion-title>Vila Verde</ion-title>
     <ion-buttons slot="end">
-      <ion-toggle [(ngModel)]="isDarkMode" (ionChange)="toggleDarkMode()" aria-label="Toggle Dark Mode"></ion-toggle>
-      <ion-icon name="moon" slot="end" *ngIf="isDarkMode" style="margin-right: 10px;"></ion-icon>
-      <ion-icon name="sunny" slot="end" *ngIf="!isDarkMode" style="margin-right: 10px;"></ion-icon>
+      <ion-button (click)="toggleDarkMode()" class="theme-toggle-btn">
+        <ion-icon [name]="isDarkMode ? 'moon' : 'sunny'" slot="icon-only"></ion-icon>
+      </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="main-page ion-padding">
-  <!-- Cartão de Meteorologia -->
-  <ion-card class="weather-card glass-card" *ngIf="weatherData">
-    <ion-card-header>
-      <ion-card-title>Meteorologia em Vila Verde</ion-card-title>
-    </ion-card-header>
+<ion-content class="main-page ion-padding with-transparent-header">
+  <!-- Weather card - improved layout -->
+  <ion-card class="weather-card" *ngIf="weatherData">
     <ion-card-content class="weather-content">
       <div class="weather-info">
         <img [src]="weatherIconUrl" alt="Weather icon" class="weather-icon" *ngIf="weatherIconUrl" />
@@ -29,21 +26,26 @@
         </div>
       </div>
       <div class="extra-info">
-        <span>Sensação: {{ weatherData.main.feels_like | number:'1.0-0' }}°C</span>
-        <span>Humidade: {{ weatherData.main.humidity }}%</span>
-        <span *ngIf="weatherData.rain && weatherData.rain['1h']">Chuva (1h): {{ weatherData.rain['1h'] }} mm</span>
+        <span><ion-icon name="thermometer-outline"></ion-icon> Sensação: {{ weatherData.main.feels_like | number:'1.0-0'
+          }}°C</span>
+        <span><ion-icon name="water-outline"></ion-icon> Humidade: {{ weatherData.main.humidity }}%</span>
+        <span *ngIf="weatherData.rain && weatherData.rain['1h']"><ion-icon name="rainy-outline"></ion-icon> Chuva: {{
+          weatherData.rain['1h'] }} mm</span>
       </div>
     </ion-card-content>
   </ion-card>
 
-  <ion-label class="popular-title">Populares em Vila Verde</ion-label>
+  <!-- Improved section header -->
+  <div class="section-header">
+    <h2>Populares em Vila Verde</h2>
+  </div>
 
-  <!-- Carrossel horizontal de locais populares -->
+  <!-- Carrossel horizontal of popular places - improved -->
   <div class="popular-scroll">
-    <!-- Use *ngFor with async pipe to loop through popular items -->
-    <!-- Add click event to navigate -->
     <ion-card class="popular-card" *ngFor="let item of popularItems$ | async" (click)="goToItemDetail(item.id)">
-      <img [src]="item.image" [alt]="item.name" />
+      <div class="card-img-container">
+        <img [src]="item.image" [alt]="item.name" />
+      </div>
       <ion-card-header>
         <ion-card-title>{{ item.name }}</ion-card-title>
         <p>{{ item.description }}</p>
@@ -51,6 +53,52 @@
     </ion-card>
   </div>
 
+  <!-- New Section - Upcoming Events -->
+  <div class="section-header">
+    <h2>Eventos Próximos</h2>
+  </div>
+
+  <ion-card class="event-card">
+    <ion-card-content>
+      <div class="event-date">
+        <span class="event-day">2-6</span>
+        <span class="event-month">OUT</span>
+      </div>
+      <div class="event-details">
+        <h3>Festa das Colheitas</h3>
+        <p><ion-icon name="location-outline"></ion-icon> Vila Verde</p>
+        <p><ion-icon name="time-outline"></ion-icon> 2025</p>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="event-card">
+    <ion-card-content>
+      <div class="event-date">
+        <span class="event-day">26-29</span>
+        <span class="event-month">JUN</span>
+      </div>
+      <div class="event-details">
+        <h3>Festas de Santo António</h3>
+        <p><ion-icon name="location-outline"></ion-icon> Vila Verde</p>
+        <p><ion-icon name="time-outline"></ion-icon> 2025</p>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="event-card">
+    <ion-card-content>
+      <div class="event-date">
+        <span class="event-day">7-15</span>
+        <span class="event-month">SET</span>
+      </div>
+      <div class="event-details">
+        <h3>Romaria de Nossa Senhora do Alívio</h3>
+        <p><ion-icon name="location-outline"></ion-icon> Vila Verde</p>
+        <p><ion-icon name="time-outline"></ion-icon> 2025</p>
+      </div>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
 
 <!-- Use the shared footer component -->

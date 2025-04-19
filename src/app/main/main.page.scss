@@ -4,281 +4,259 @@
     --color-selected-green: var(--ion-color-vilaverde-tint); // Use tint for selected tab
 }
 
-// Apply green gradient background
+// Apply gradient background
 .main-page {
-    --background: linear-gradient(135deg, var(--ion-color-vilaverde-tint) 0%, var(--ion-color-vilaverde) 100%); // Use tint and base
+    --background: linear-gradient(165deg, var(--ion-color-vilaverde-tint) 0%, var(--ion-color-vilaverde) 100%);
 }
 
-// Update header to use green
+// Enhanced header
 .header-transparent {
     ion-toolbar {
-        --background: var(--ion-color-vilaverde); // Use base color
-        --ion-color-base: var(--ion-color-vilaverde); // Match base color
-        border: none;
+        --background: transparent;
+        --border-width: 0;
     }
 
-    ion-title,
-    ion-icon,
-    ion-buttons ion-icon {
-        color: var(--ion-color-vilaverde-contrast) !important; // Use contrast color
+    ion-title {
+        font-weight: 700;
+        font-size: 1.3rem;
     }
-}
 
-/* Efeito vidro partilhado */
-.glass-card {
-    backdrop-filter: blur(16px) saturate(180%);
-    -webkit-backdrop-filter: blur(16px) saturate(180%);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-}
+    .header-logo {
+        height: 40px;
+        margin-left: 8px;
+        border-radius: 8px;
+    }
 
-.viagem-card {
-    background: var(--ion-card-background); // Use variable instead of hardcoded color
-    color: var(--ion-text-color); // Use variable instead of hardcoded color
-    padding: 1rem;
-    border-radius: 1.2rem;
-    margin: 1rem 0 2rem 0;
-
-    // Ensure inner elements inherit the correct text color
-    * {
-        color: var(--ion-text-color);
+    .theme-toggle-btn {
+        font-size: 1.2rem;
     }
 }
 
-.viagem-info {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 1rem;
-    font-size: 0.9rem;
-}
-
-.viagem-meta {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.2rem;
-    text-align: center;
-}
-
-.chegada-card {
-    background: var(--ion-card-background); // Use variable instead of hardcoded color
-    color: var(--ion-text-color); // Use variable instead of hardcoded color
-    padding: 0.5rem;
-    border-radius: 1.2rem;
-    margin: 1rem 0 2rem 0;
-    text-align: center;
-
-    // Ensure inner elements inherit the correct text color
-    * {
-        color: var(--ion-text-color);
-    }
-}
-
-.tempo-restante {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.25rem;
-    margin-bottom: 1rem;
-}
-
-.contador {
-    font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: -1px;
-    margin: 0;
-    color: var(--ion-text-color); // Use variable instead of hardcoded color
-}
-
-ion-progress-bar {
-    margin-bottom: 1rem;
-    --progress-background: var(--ion-color-vilaverde-tint); // Use tint for the track
-    --buffer-background: rgba(67, 138, 71, 0.5); // Use tint RGBa for buffer
-    --background: var(--ion-color-vilaverde-shade); // Use shade for the bar itself
-    height: 8px; // Optional: Adjust height if needed
-    border-radius: 4px; // Optional: Round corners
-}
-
-.cta-btn {
-    --background: #fff;
-    --background-hover: #ffd65c;
-    --background-focused: #ffd65c;
-    --color: var(--ion-color-vilaverde); // Use base color for text
-    font-weight: 600;
-}
-
-.popular-title {
-    margin: 1rem 0 0.5rem 0;
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: #fff;
-}
-
-.popular-scroll {
-    display: flex;
-    gap: 1rem;
-    overflow-x: auto;
-    padding-bottom: 1rem;
-    scroll-snap-type: x mandatory;
-}
-
-.popular-scroll::-webkit-scrollbar {
-    height: 6px;
-}
-
-.popular-scroll::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.3);
-    border-radius: 3px;
-}
-
-.popular-card {
-    flex: 0 0 160px;
-    height: 240px;
-    border-radius: 1rem;
-    overflow: hidden;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
-    scroll-snap-align: start;
-    background: var(--ion-card-background); // Use variable instead of hardcoded color
-    color: var(--ion-text-color); // Use variable instead of hardcoded color
-}
-
-.popular-card img {
-    width: 100%;
-    height: 140px;
-    object-fit: cover;
-}
-
-.popular-card ion-card-header {
-    text-align: center;
-    padding-top: 0.5rem;
-}
-
-.popular-card ion-card-title {
-    font-size: 0.9rem;
-    color: var(--ion-color-vilaverde); // Use proper variable
-    margin: 0;
-}
-
-.popular-card p {
-    font-size: 0.8rem;
-    color: var(--ion-text-color); // Use variable instead of hardcoded color
-    margin: 0;
-}
-
-// Footer styles copied from main.page.scss
-.footer-tab {
-    --background: rgba(255, 255, 255, 0.15); // Keep glass effect
-    backdrop-filter: blur(10px);
-    --color: var(--ion-color-dark); // Changed to dark for inactive icons
-    --color-selected: var(--color-selected-green); // Use variable defined in :host
-    font-size: 0.75rem;
-    border: none;
-
-    // Style for the selected tab button
-    ion-tab-button.tab-selected {
-        --color: var(--color-selected);
-    }
-}
-
-ion-searchbar {
-    /* vidro ligeiro, sem tonalidade azul */
-    --background: rgba(255, 255, 255, 0.12);
-    --box-shadow: none;
-    --border-width: 0;
-    /* tira a linha azul do modo MD */
+// Enhanced searchbar
+.custom-searchbar {
+    --background: rgba(255, 255, 255, 0.15);
     --border-radius: 12px;
-
-    /* texto, placeholder e ícones a branco */
-    --color: #fff;
+    --color: var(--ion-color-primary-contrast);
     --placeholder-color: rgba(255, 255, 255, 0.8);
-    --icon-color: #fff;
-    --clear-button-color: #fff;
+    --icon-color: var(--ion-color-primary-contrast);
+    --clear-button-color: var(--ion-color-primary-contrast);
+    margin-bottom: 16px;
 
-    /* garante que não puxa a cor primária azul do tema */
     .searchbar-input {
         background: transparent !important;
     }
 }
 
-/* Cartão de Meteorologia */
+// Enhanced weather card
 .weather-card {
-    margin-top: 1rem; // Add some space above the card
-    margin-bottom: 1.5rem;
-    background: var(--ion-card-background); // Use variable instead of hardcoded color
-    color: var(--ion-text-color); // Use variable instead of hardcoded color
-    border-radius: 1.2rem; // Match other cards' border-radius
-    padding: 1.5rem; // Increased padding to make the card slightly larger
-
-    // Override glass effect background/blur if present
-    background-color: var(--ion-card-background) !important; // Use variable
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-    border: none; // Remove border if it was part of glass effect
-
-    // Ensure all inner text elements use correct color
-    * {
-        color: var(--ion-text-color) !important; // Use variable instead of hardcoded color
-    }
-
-    ion-card-header {
-        padding-bottom: 0.5rem; // Reduce bottom padding
-        padding-left: 0; // Remove default header padding if needed
-        padding-right: 0;
-        padding-top: 0;
-    }
-
-    ion-card-title {
-        color: var(--ion-text-color) !important; // Use variable instead of hardcoded color
-        font-size: 1.2rem; // Adjust title size if needed
-    }
+    border-radius: 16px;
+    background: var(--ion-card-background);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 24px;
+    overflow: hidden;
 
     .weather-content {
-        display: flex;
-        flex-direction: column; // Stack main info and extra info vertically
-        gap: 0.8rem; // Space between sections
+        padding: 0;
     }
 
     .weather-info {
         display: flex;
         align-items: center;
-        gap: 1rem; // Space between icon and text details
-    }
+        padding: 16px;
 
-    .weather-icon {
-        width: 60px; // Adjust size as needed
-        height: 60px;
-    }
+        .weather-icon {
+            width: 70px;
+            height: 70px;
+            margin-right: 16px;
+        }
 
-    .weather-details {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-    }
+        .weather-details {
+            .temperature {
+                font-size: 2.2rem;
+                font-weight: 700;
+                line-height: 1;
+                display: block;
+                margin-bottom: 4px;
+            }
 
-    .temperature {
-        font-size: 1.8rem;
-        font-weight: bold;
-        color: var(--ion-text-color) !important; // Use variable instead of hardcoded color
-    }
-
-    .description {
-        font-size: 1rem;
-        color: var(--ion-text-color) !important; // Use variable instead of hardcoded color
-        opacity: 0.9;
+            .description {
+                font-size: 1.1rem;
+                opacity: 0.9;
+            }
+        }
     }
 
     .extra-info {
         display: flex;
-        justify-content: space-around; // Distribute items evenly
-        font-size: 0.9rem;
-        color: var(--ion-text-color) !important; // Use variable instead of hardcoded color
-        opacity: 0.8;
-        border-top: 1px solid rgba(128, 128, 128, 0.3); // Neutral separator that works in both modes
-        padding-top: 0.8rem;
+        justify-content: space-around;
+        padding: 12px 10px;
+        border-top: 1px solid rgba(var(--ion-color-medium-rgb), 0.2);
 
         span {
-            text-align: center;
-            color: var(--ion-text-color) !important; // Use variable instead of hardcoded color
+            display: flex;
+            align-items: center;
+            font-size: 0.85rem;
+
+            ion-icon {
+                margin-right: 4px;
+                font-size: 1rem;
+            }
+        }
+    }
+}
+
+// Section header styling
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+
+    h2 {
+        color: var(--ion-color-primary-contrast);
+        font-size: 1.3rem;
+        font-weight: 700;
+        margin: 0;
+    }
+
+    ion-button {
+        --color: var(--ion-color-primary-contrast);
+        font-weight: 500;
+        font-size: 0.85rem;
+        text-transform: none;
+        --padding-start: 0;
+        --padding-end: 0;
+        margin: 0;
+    }
+}
+
+// Enhanced popular cards scrolling
+.popular-scroll {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    padding-bottom: 24px;
+    scroll-snap-type: x mandatory;
+
+    &::-webkit-scrollbar {
+        height: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 2px;
+    }
+}
+
+// Enhanced popular cards
+.popular-card {
+    flex: 0 0 180px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    scroll-snap-align: start;
+    background: var(--ion-card-background);
+    margin: 0;
+
+    .card-img-container {
+        height: 130px;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+    }
+
+    &:active img {
+        transform: scale(1.05);
+    }
+
+    ion-card-header {
+        padding: 12px;
+
+        ion-card-title {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+            color: var(--ion-color-vilaverde);
+        }
+
+        p {
+            font-size: 0.8rem;
+            margin: 0;
+            color: var(--ion-text-color);
+            opacity: 0.9;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+    }
+}
+
+// Event cards styling
+.event-card {
+    border-radius: 16px;
+    margin-bottom: 16px;
+    background: var(--ion-card-background);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+
+    ion-card-content {
+        display: flex;
+        padding: 16px;
+        align-items: center;
+    }
+
+    .event-date {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 70px;
+        height: 60px;
+        border-radius: 8px;
+        background: var(--ion-color-vilaverde);
+        color: white;
+        margin-right: 16px;
+
+        .event-day {
+            font-size: 1.6rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .event-month {
+            font-size: 0.8rem;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+    }
+
+    .event-details {
+        flex: 1;
+
+        h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 0 0 8px 0;
+        }
+
+        p {
+            display: flex;
+            align-items: center;
+            margin: 4px 0;
+            font-size: 0.9rem;
+            color: var(--ion-text-color);
+            opacity: 0.85;
+
+            ion-icon {
+                margin-right: 6px;
+                font-size: 1rem;
+            }
         }
     }
 }

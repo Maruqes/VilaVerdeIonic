@@ -1,0 +1,1 @@
+export CAPACITOR_ANDROID_STUDIO_PATH="/usr/local/bin/android-studio"
