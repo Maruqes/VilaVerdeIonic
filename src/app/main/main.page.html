@@ -1,9 +1,20 @@
 <!-- main.page.html (rev) -->
 
-<ion-content class="main-page ion-padding">
-  <img src="assets/vila_verde.gif" alt="Vila Verde Logo"
-    style="display: block; margin: 0.5rem auto 0 auto; width: 65px;" />
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <img src="assets/vila_verde.gif" alt="Vila Verde Logo" style="height: 40px; margin-left: 10px;" />
+    </ion-buttons>
+    <ion-title>Vila Verde App</ion-title>
+    <ion-buttons slot="end">
+      <ion-toggle [(ngModel)]="isDarkMode" (ionChange)="toggleDarkMode()" aria-label="Toggle Dark Mode"></ion-toggle>
+      <ion-icon name="moon" slot="end" *ngIf="isDarkMode" style="margin-right: 10px;"></ion-icon>
+      <ion-icon name="sunny" slot="end" *ngIf="!isDarkMode" style="margin-right: 10px;"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
 
+<ion-content class="main-page ion-padding">
   <!-- Cartão de Meteorologia -->
   <ion-card class="weather-card glass-card" *ngIf="weatherData">
     <ion-card-header>

@@ -32,15 +32,15 @@
 }
 
 .viagem-card {
-    background: var(--ion-color-light); // Changed background
-    color: var(--text-dark); // Adjust text color for light background
+    background: var(--ion-card-background); // Use variable instead of hardcoded color
+    color: var(--ion-text-color); // Use variable instead of hardcoded color
     padding: 1rem;
     border-radius: 1.2rem;
     margin: 1rem 0 2rem 0;
 
-    // Ensure inner elements inherit the dark text color
+    // Ensure inner elements inherit the correct text color
     * {
-        color: var(--text-dark);
+        color: var(--ion-text-color);
     }
 }
 
@@ -61,16 +61,16 @@
 }
 
 .chegada-card {
-    background: var(--ion-color-light); // Changed background
-    color: var(--text-dark); // Adjust text color for light background
+    background: var(--ion-card-background); // Use variable instead of hardcoded color
+    color: var(--ion-text-color); // Use variable instead of hardcoded color
     padding: 0.5rem;
     border-radius: 1.2rem;
     margin: 1rem 0 2rem 0;
     text-align: center;
 
-    // Ensure inner elements inherit the dark text color
+    // Ensure inner elements inherit the correct text color
     * {
-        color: var(--text-dark);
+        color: var(--ion-text-color);
     }
 }
 
@@ -87,7 +87,7 @@
     font-weight: 700;
     letter-spacing: -1px;
     margin: 0;
-    color: var(--text-dark); // Explicitly set dark color for contrast
+    color: var(--ion-text-color); // Use variable instead of hardcoded color
 }
 
 ion-progress-bar {
@@ -138,8 +138,8 @@ ion-progress-bar {
     overflow: hidden;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
     scroll-snap-align: start;
-    background: var(--ion-color-light); // Changed background
-    color: var(--text-dark); // Adjust text color for light background
+    background: var(--ion-card-background); // Use variable instead of hardcoded color
+    color: var(--ion-text-color); // Use variable instead of hardcoded color
 }
 
 .popular-card img {
@@ -155,13 +155,13 @@ ion-progress-bar {
 
 .popular-card ion-card-title {
     font-size: 0.9rem;
-    color: var(--ion-color-vilaverde-shade); // Use shade color
+    color: var(--ion-color-vilaverde); // Use proper variable
     margin: 0;
 }
 
 .popular-card p {
     font-size: 0.8rem;
-    color: var(--text-dark);
+    color: var(--ion-text-color); // Use variable instead of hardcoded color
     margin: 0;
 }
 
@@ -204,20 +204,20 @@ ion-searchbar {
 .weather-card {
     margin-top: 1rem; // Add some space above the card
     margin-bottom: 1.5rem;
-    background: var(--ion-color-light); // Changed background to light
-    color: var(--text-dark); // Changed default text color to dark
+    background: var(--ion-card-background); // Use variable instead of hardcoded color
+    color: var(--ion-text-color); // Use variable instead of hardcoded color
     border-radius: 1.2rem; // Match other cards' border-radius
     padding: 1.5rem; // Increased padding to make the card slightly larger
 
     // Override glass effect background/blur if present
-    background-color: var(--ion-color-light) !important;
+    background-color: var(--ion-card-background) !important; // Use variable
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
     border: none; // Remove border if it was part of glass effect
 
-    // Ensure all inner text elements use dark color
+    // Ensure all inner text elements use correct color
     * {
-        color: var(--text-dark) !important; // Force dark text color
+        color: var(--ion-text-color) !important; // Use variable instead of hardcoded color
     }
 
     ion-card-header {
@@ -228,7 +228,7 @@ ion-searchbar {
     }
 
     ion-card-title {
-        color: var(--text-dark) !important; // Ensure title is dark
+        color: var(--ion-text-color) !important; // Use variable instead of hardcoded color
         font-size: 1.2rem; // Adjust title size if needed
     }
 
@@ -258,12 +258,12 @@ ion-searchbar {
     .temperature {
         font-size: 1.8rem;
         font-weight: bold;
-        color: var(--text-dark) !important; // Ensure temperature is dark
+        color: var(--ion-text-color) !important; // Use variable instead of hardcoded color
     }
 
     .description {
         font-size: 1rem;
-        color: var(--text-dark) !important; // Ensure description is dark
+        color: var(--ion-text-color) !important; // Use variable instead of hardcoded color
         opacity: 0.9;
     }
 
@@ -271,14 +271,14 @@ ion-searchbar {
         display: flex;
         justify-content: space-around; // Distribute items evenly
         font-size: 0.9rem;
-        color: var(--text-dark) !important; // Ensure extra info is dark
+        color: var(--ion-text-color) !important; // Use variable instead of hardcoded color
         opacity: 0.8;
-        border-top: 1px solid rgba(0, 0, 0, 0.1); // Change separator line to dark
+        border-top: 1px solid rgba(128, 128, 128, 0.3); // Neutral separator that works in both modes
         padding-top: 0.8rem;
 
         span {
             text-align: center;
-            color: var(--text-dark) !important; // Ensure spans are dark
+            color: var(--ion-text-color) !important; // Use variable instead of hardcoded color
         }
     }
 }

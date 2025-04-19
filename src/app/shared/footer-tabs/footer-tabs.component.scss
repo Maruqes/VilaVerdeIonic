@@ -1,24 +1,25 @@
 ion-tab-bar {
-    --background: rgb(253, 252, 248); // Changed from --ion-color-light to RGB
+    // Use theme variable for background, fallback to light color
+    --background: var(--ion-tab-bar-background, var(--ion-color-light));
     border-top: 1px solid var(--ion-color-medium-shade);
 }
 
 ion-tab-button {
-    --color: rgb(34, 36, 40); // Changed from medium to dark RGB for better contrast
+    // Use theme variable for default color, fallback to medium
+    --color: var(--ion-tab-bar-color, var(--ion-color-medium));
     --color-selected: var(--ion-color-vilaverde); // Use vilaverde color
 
     ion-icon {
         font-size: 1.5rem; // Adjust icon size
-        color: rgb(34, 36, 40) !important; // dark RGB
+        // Remove hardcoded color, let --color handle it
     }
 
     ion-label {
         font-size: 0.75rem; // Adjust label size
-        color: rgb(34, 36, 40) !important; // dark RGB
+        // Remove hardcoded color, let --color handle it
     }
 
     &.tab-selected {
-
         ion-icon {
             color: var(--ion-color-vilaverde) !important;
         }

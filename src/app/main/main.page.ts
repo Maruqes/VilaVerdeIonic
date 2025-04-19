@@ -1,32 +1,55 @@
-import { Component, OnInit } from '@angular/core';
-import { DataService, Item } from '../services/data.service'; // Import DataService and Item
-import { Observable } from 'rxjs'; // Import Observable
-import { Router } from '@angular/router'; // Import Router
-import { HttpClient } from '@angular/common/http'; // Import HttpClient
-import { TitleCasePipe } from '@angular/common'; // Import TitleCasePipe
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { DataService, Item } from '../services/data.service';
+import { ThemeService } from '../services/theme.service';
+import { Observable, Subscription } from 'rxjs';
+import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { TitleCasePipe } from '@angular/common';
 
 @Component({
   selector: 'app-main',
   templateUrl: './main.page.html',
   styleUrls: ['./main.page.scss'],
   standalone: false,
-  providers: [TitleCasePipe] // Provide TitleCasePipe
+  providers: [TitleCasePipe]
 })
-export class MainPage implements OnInit {
+export class MainPage implements OnInit, OnDestroy {
 
-  popularItems$!: Observable<Item[]>; // Use Observable for async data
-  weatherData: any; // Property to hold weather data
-  weatherIconUrl: string | null = null; // Property for weather icon URL
+  popularItems$!: Observable<Item[]>;
+  weatherData: any;
+  weatherIconUrl: string | null = null;
+  isDarkMode: boolean = false;
+  private darkModeSubscription?: Subscription;
 
   constructor(
-    private dataService: DataService, // Inject DataService
-    private router: Router, // Inject Router
-    private http: HttpClient // Inject HttpClient
+    private dataService: DataService,
+    private router: Router,
+    private http: HttpClient,
+    private themeService: ThemeService
   ) { }
 
   ngOnInit() {
-    this.popularItems$ = this.dataService.getPopular(); // Fetch popular items
-    this.fetchWeatherData(); // Fetch weather data on init
+    this.popularItems$ = this.dataService.getPopular();
+    this.fetchWeatherData();
+
+    // Subscribe to dark mode changes
+    this.isDarkMode = this.themeService.getCurrentValue();
+    this.darkModeSubscription = this.themeService.isDarkMode().subscribe(
+      isDark => {
+        this.isDarkMode = isDark;
+      }
+    );
+  }
+
+  ngOnDestroy() {
+    // Clean up subscription when component is destroyed
+    if (this.darkModeSubscription) {
+      this.darkModeSubscription.unsubscribe();
+    }
+  }
+
+  toggleDarkMode() {
+    this.themeService.toggle();
   }
 
   fetchWeatherData() {
@@ -65,5 +88,4 @@ export class MainPage implements OnInit {
   goToItemDetail(itemId: number) {
     this.router.navigate(['/item-detail', itemId]);
   }
-
 }

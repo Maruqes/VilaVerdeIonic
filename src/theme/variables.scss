@@ -38,6 +38,174 @@
     --ion-color-vilaverde-tint: #438a47;
 }
 
+// Set light theme as default unless dark is explicitly applied
+body:not(.dark-theme) {
+    --ion-background-color: var(--ion-color-light);
+    --ion-background-color-rgb: var(--ion-color-light-rgb);
+
+    --ion-text-color: #000000; // Default text for light mode
+    --ion-text-color-rgb: 0, 0, 0;
+
+    --ion-color-step-50: #f6f6f2;
+    --ion-color-step-100: #ecebe6;
+    --ion-color-step-150: #e1e0da;
+    // ... add more steps as needed
+
+    --ion-item-background: #ffffff; // Example: Item background for light mode
+    --ion-toolbar-background: var(--ion-color-primary); // Keep toolbar primary
+    --ion-tab-bar-background: var(--ion-color-light); // Tab bar background light
+    --ion-card-background: #ffffff; // Card background light
+}
+
+
+/*
+ * Dark Colors
+ * -------------------------------------------
+ */
+
+body.dark-theme {
+    --ion-color-primary: #2e7d32; // Keep primary green
+    --ion-color-primary-rgb: 46, 125, 50;
+    --ion-color-primary-contrast: #ffffff;
+    --ion-color-primary-contrast-rgb: 255, 255, 255;
+    --ion-color-primary-shade: #286e2c;
+    --ion-color-primary-tint: #438a47;
+
+    // Keep vilaverde color the same
+    --ion-color-vilaverde: #2e7d32;
+    --ion-color-vilaverde-rgb: 46, 125, 50;
+    --ion-color-vilaverde-contrast: #ffffff;
+    --ion-color-vilaverde-contrast-rgb: 255, 255, 255;
+    --ion-color-vilaverde-shade: #286e2c;
+    --ion-color-vilaverde-tint: #438a47;
+
+    --ion-color-secondary: #50c8ff;
+    --ion-color-secondary-rgb: 80, 200, 255;
+    --ion-color-secondary-contrast: #ffffff;
+    --ion-color-secondary-contrast-rgb: 255, 255, 255;
+    --ion-color-secondary-shade: #46b0e0;
+    --ion-color-secondary-tint: #62ceff;
+
+    --ion-color-tertiary: #6a64ff;
+    --ion-color-tertiary-rgb: 106, 100, 255;
+    --ion-color-tertiary-contrast: #ffffff;
+    --ion-color-tertiary-contrast-rgb: 255, 255, 255;
+    --ion-color-tertiary-shade: #5d58e0;
+    --ion-color-tertiary-tint: #7974ff;
+
+    --ion-color-success: #2fdf75;
+    --ion-color-success-rgb: 47, 223, 117;
+    --ion-color-success-contrast: #000000;
+    --ion-color-success-contrast-rgb: 0, 0, 0;
+    --ion-color-success-shade: #29c467;
+    --ion-color-success-tint: #44e283;
+
+    --ion-color-warning: #ffd534;
+    --ion-color-warning-rgb: 255, 213, 52;
+    --ion-color-warning-contrast: #000000;
+    --ion-color-warning-contrast-rgb: 0, 0, 0;
+    --ion-color-warning-shade: #e0bb2e;
+    --ion-color-warning-tint: #ffd948;
+
+    --ion-color-danger: #ff4961;
+    --ion-color-danger-rgb: 255, 73, 97;
+    --ion-color-danger-contrast: #ffffff;
+    --ion-color-danger-contrast-rgb: 255, 255, 255;
+    --ion-color-danger-shade: #e04055;
+    --ion-color-danger-tint: #ff5b71;
+
+    --ion-color-dark: #f4f5f8; // Light color for text/elements in dark mode
+    --ion-color-dark-rgb: 244, 245, 248;
+    --ion-color-dark-contrast: #000000;
+    --ion-color-dark-contrast-rgb: 0, 0, 0;
+    --ion-color-dark-shade: #d7d8da;
+    --ion-color-dark-tint: #f5f6f9;
+
+    --ion-color-medium: #bdbdbd; // Lighter grey for better contrast in dark mode
+    --ion-color-medium-rgb: 189, 189, 189;
+    --ion-color-medium-contrast: #000000; // Contrast for the lighter grey
+    --ion-color-medium-contrast-rgb: 0, 0, 0;
+    --ion-color-medium-shade: #a6a6a6; // Shade for the lighter grey
+    --ion-color-medium-tint: #c4c4c4; // Tint for the lighter grey
+
+    --ion-color-light: #222428; // Dark color for background in dark mode
+    --ion-color-light-rgb: 34, 36, 40;
+    --ion-color-light-contrast: #ffffff; // Contrast against dark background
+    --ion-color-light-contrast-rgb: 255, 255, 255;
+    --ion-color-light-shade: #1e2023;
+    --ion-color-light-tint: #383a3e;
+
+    /** Custom Dark Theme Overrides **/
+    --ion-background-color: #121212; // Main dark background
+    --ion-background-color-rgb: 18, 18, 18;
+
+    --ion-text-color: #ffffff; // Use white text for maximum contrast in dark mode
+    --ion-text-color-rgb: 255, 255, 255;
+
+    --ion-toolbar-background: var(--ion-color-primary); // Keep toolbar primary green
+    --ion-toolbar-color: var(--ion-color-primary-contrast); // Text color on toolbar
+
+    --ion-item-background: #1e1e1e; // Slightly lighter dark for items
+    --ion-item-color: var(--ion-text-color); // Use main text color for items
+
+    --ion-card-background: #1e1e1e; // Card background dark
+    --ion-card-color: var(--ion-text-color); // Use main text color for cards
+
+    --ion-tab-bar-background: #1e1e1e; // Tab bar background dark (ensure this is dark)
+    --ion-tab-bar-color: var(--ion-color-medium); // Use medium color for inactive tabs
+    --ion-tab-bar-color-selected: var(--ion-color-primary); // Selected tab icon color
+
+    // Adjust glass card effect for dark mode if needed
+    .glass-card {
+        background: rgba(30, 30, 30, 0.7); // Darker translucent background
+        backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.15); // Slightly more visible border
+        color: var(--ion-text-color); // Ensure text inside glass card is readable
+    }
+
+    // Força a cor do texto em todos os cards e seus elementos
+    ion-card {
+        color: #ffffff !important;
+
+        ion-card-title,
+        ion-card-subtitle,
+        ion-card-header,
+        ion-card-content {
+            color: #ffffff !important;
+        }
+
+        p,
+        span,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        div {
+            color: #ffffff !important;
+        }
+    }
+
+    // Ensure labels and titles are readable
+    ion-label,
+    ion-card-title,
+    .popular-title {
+        color: var(--ion-text-color) !important; // Force text color for labels/titles
+    }
+
+    // Ensure card content text is readable
+    ion-card-content,
+    ion-card-header p {
+        color: var(--ion-text-color) !important; // Use main text color (white) for better contrast
+    }
+
+    ion-card-header ion-card-title {
+        color: var(--ion-text-color) !important; // Ensure card titles are bright
+    }
+}
+
+
 .ion-color-vilaverde {
     --ion-color-base: var(--ion-color-vilaverde);
     --ion-color-base-rgb: var(--ion-color-vilaverde-rgb);
