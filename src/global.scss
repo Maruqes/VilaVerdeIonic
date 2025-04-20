@@ -124,6 +124,12 @@ ion-button {
     }
 }
 
+/* Button hover effect */
+ion-button:hover {
+    filter: brightness(1.05);
+    transition: filter var(--transition-fast);
+}
+
 /* Tipografia melhorada */
 h1,
 h2,
@@ -189,10 +195,10 @@ ion-select {
 
 /* Animações de fade */
 .fade-in {
-    animation: fadeIn 0.5s forwards;
+    animation: fade-in var(--transition-normal) ease forwards;
 }
 
-@keyframes fadeIn {
+@keyframes fade-in {
     from {
         opacity: 0;
         transform: translateY(10px);
@@ -202,6 +208,12 @@ ion-select {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/* Accessibility focus outline */
+:focus {
+    outline: 2px solid var(--ion-color-vilaverde);
+    outline-offset: 2px;
 }
 
 /* Ajustes responsivos */

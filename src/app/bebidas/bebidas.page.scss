@@ -5,6 +5,7 @@
 /* Fundo com gradiente refinado */
 .bebidas-page {
     --background: linear-gradient(135deg, #4caf50 0%, var(--ion-color-vilaverde) 100%);
+    animation: fadeIn var(--transition-normal) ease forwards;
 }
 
 /* Header transparente aprimorado */
@@ -40,11 +41,16 @@
     color: var(--text-dark);
     display: flex;
     flex-direction: column;
-    transition: transform 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.35s ease;
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
     transform: translateY(0);
 
     &:active {
         transform: translateY(-8px) scale(0.98);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    }
+
+    &:hover {
+        transform: translateY(-5px) scale(1.02);
         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
     }
 

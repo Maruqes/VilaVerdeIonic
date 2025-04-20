@@ -1,5 +1,6 @@
 .home-page {
   --background: linear-gradient(to top, var(--ion-color-vilaverde-tint), var(--ion-color-vilaverde)); // Use tint and base
+  animation: fade-in var(--transition-normal) ease forwards;
 }
 
 ion-header,
@@ -30,6 +31,7 @@ ion-footer {
   align-items: center;
   justify-content: center;
   margin-bottom: 20px;
+  box-shadow: var(--shadow-medium);
 }
 
 .circle img {
@@ -48,4 +50,9 @@ ion-footer {
   font-weight: bold;
   --background: var(--ion-color-vilaverde); // Use base color
   --color: var(--ion-color-vilaverde-contrast); // Use contrast color
+  transition: background var(--transition-normal), transform var(--transition-fast);
+
+  &:active {
+    transform: scale(0.98);
+  }
 }

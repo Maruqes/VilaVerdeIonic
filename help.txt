@@ -1,1 +1,4 @@
 export CAPACITOR_ANDROID_STUDIO_PATH="/usr/local/bin/android-studio"
+
+//idea
+add photos to the app, users can take photos and add them to the app
