@@ -95,9 +95,17 @@ ion-card {
     margin: 16px;
     box-shadow: var(--shadow-soft);
     transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+    background: var(--ion-color-light);
+    border: 1px solid rgba(0, 0, 0, 0.05);
 
     &:active {
         transform: scale(0.98);
+        box-shadow: var(--shadow-medium);
+    }
+
+    // subtle lift on hover
+    &:hover {
+        transform: translateY(-4px);
         box-shadow: var(--shadow-medium);
     }
 }
@@ -117,6 +125,8 @@ ion-button {
     letter-spacing: 0.4px;
     text-transform: none;
     height: 48px;
+    box-shadow: var(--shadow-soft);
+    transition: box-shadow var(--transition-fast), transform var(--transition-fast);
 
     &.action-button {
         --box-shadow: var(--shadow-medium);
@@ -128,6 +138,28 @@ ion-button {
 ion-button:hover {
     filter: brightness(1.05);
     transition: filter var(--transition-fast);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-medium);
+}
+
+/* Footer tabs and card enhancements */
+ion-tab-bar {
+    box-shadow: var(--shadow-soft);
+    transition: background var(--transition-normal);
+    background: var(--ion-color-light);
+}
+
+ion-tab-button {
+    transition: color var(--transition-fast), transform var(--transition-fast);
+}
+
+ion-tab-button:hover {
+    transform: scale(1.1);
+}
+
+ion-tab-button.ion-selected {
+    box-shadow: inset 0 -2px 0 0 var(--ion-color-primary);
+    color: var(--ion-color-primary);
 }
 
 /* Tipografia melhorada */
