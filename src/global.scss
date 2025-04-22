@@ -90,11 +90,10 @@ ion-content.with-transparent-header {
 
 /* Estilos de cartão aprimorados */
 ion-card {
-    border-radius: 16px;
-    overflow: hidden;
-    margin: 16px;
-    box-shadow: var(--shadow-soft);
-    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+    border-radius: 12px; // sleeker radius
+    margin: 12px; // tighter spacing
+    box-shadow: var(--shadow-medium); // a bit deeper shadow
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
     background: var(--ion-color-light);
     border: 1px solid rgba(0, 0, 0, 0.05);
 
@@ -105,15 +104,15 @@ ion-card {
 
     // subtle lift on hover
     &:hover {
-        transform: translateY(-4px);
-        box-shadow: var(--shadow-medium);
+        transform: translateY(-6px); // slightly more lift
+        box-shadow: var(--shadow-hard); // stronger shadow on hover
     }
 }
 
 /* Efeito de cartão de vidro */
 .glass-card {
     background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(12px); // slight stronger blur
     border: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: var(--shadow-soft);
 }
@@ -198,7 +197,7 @@ ion-card-title {
             bottom: -6px;
             left: 0;
             width: 40px;
-            height: 3px;
+            height: 4px; // bolder underline
             border-radius: 3px;
             background-color: var(--ion-color-vilaverde);
         }
@@ -244,7 +243,7 @@ ion-select {
 
 /* Accessibility focus outline */
 :focus {
-    outline: 2px solid var(--ion-color-vilaverde);
+    outline: 3px solid var(--ion-color-primary); // thicker focus ring
     outline-offset: 2px;
 }
 
