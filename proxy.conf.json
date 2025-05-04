@@ -1,6 +1,6 @@
 {
     "/vilaverde-api": {
-        "target": "https://vilaverde.marquesserver.freeddns.org:10513",
+        "target": "https://vilaverde.maruqes.com:10513",
         "secure": false,
         "changeOrigin": true,
         "pathRewrite": {
