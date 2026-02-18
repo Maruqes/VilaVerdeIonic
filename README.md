@@ -2,7 +2,7 @@
 This is a university project built with **Ionic + Angular**.  
 It’s not something I’d normally work on, but that’s exactly the point.
 
-Sometimes, stepping out of the usual path leads to new perspectives — and that’s what this project represents for me as a developer.
+Sometimes, stepping out of the usual path leads to new perspectives.
 
 ## 🛠️ Tech Stack
 - [Ionic Framework](https://ionicframework.com/)
